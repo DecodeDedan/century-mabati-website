@@ -1,0 +1,9 @@
+node_modules
+dist
+.DS_Store
+blender/out/*.glb
+blender/out/*.blend
+blender/out/*.blend1
+blender/.claude-flow/*
+.claude-flow/*
+.claude

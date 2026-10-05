@@ -1,0 +1,481 @@
+:root {
+  --bg: #eef1f4;
+  --surface: #ffffff;
+  --ink: #0e1726;
+  --muted: #4a5568;
+  --line: #d3dae3;
+  --navy: #1b2b4b;
+  --blue: #1a5e99; /* text-safe brand blue: 6:1 on --bg */
+  --glow: #2e8bdc; /* decorative only, never body text */
+  --radius: 8px;
+  --gutter: clamp(16px, 4vw, 48px);
+  --font: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --step--1: 0.875rem;
+  --step-0: 1rem;
+  --step-1: 1.25rem;
+  --step-2: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+  --step-3: clamp(2rem, 1.4rem + 2.6vw, 3.25rem);
+  --step-4: clamp(3rem, 1.6rem + 6vw, 6.5rem);
+  color-scheme: light;
+  --on-navy: #ffffff;
+  --track: rgba(27, 43, 75, 0.08);
+  --field-border: #8a96a8;
+  --danger: #b42318;
+  --badge-top: #f4f6f8;
+  --badge-bottom: #e2e7ed;
+  --logo-dark: #1d3152;
+  --wash-top: #f4f6f8;
+  --wash-bottom: #e7ebf0;
+  --wash-glow: #ffffff;
+  --wave: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22400%22%20viewBox%3D%220%200%201200%20400%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%231b2b4b%22%20stroke-opacity%3D%220.07%22%20stroke-width%3D%221%22%3E%3Cpolyline%20points%3D%220%2C25.0%2020%2C27.1%2040%2C29.1%2060%2C30.9%2080%2C32.4%20100%2C33.7%20120%2C34.5%20140%2C34.9%20160%2C34.9%20180%2C34.5%20200%2C33.7%20220%2C32.4%20240%2C30.9%20260%2C29.1%20280%2C27.1%20300%2C25.0%20320%2C22.9%20340%2C20.9%20360%2C19.1%20380%2C17.6%20400%2C16.3%20420%2C15.5%20440%2C15.1%20460%2C15.1%20480%2C15.5%20500%2C16.3%20520%2C17.6%20540%2C19.1%20560%2C20.9%20580%2C22.9%20600%2C25.0%20620%2C27.1%20640%2C29.1%20660%2C30.9%20680%2C32.4%20700%2C33.7%20720%2C34.5%20740%2C34.9%20760%2C34.9%20780%2C34.5%20800%2C33.7%20820%2C32.4%20840%2C30.9%20860%2C29.1%20880%2C27.1%20900%2C25.0%20920%2C22.9%20940%2C20.9%20960%2C19.1%20980%2C17.6%201000%2C16.3%201020%2C15.5%201040%2C15.1%201060%2C15.1%201080%2C15.5%201100%2C16.3%201120%2C17.6%201140%2C19.1%201160%2C20.9%201180%2C22.9%201200%2C25.0%22/%3E%3Cpolyline%20points%3D%220%2C82.9%2020%2C85.1%2040%2C86.9%2060%2C88.2%2080%2C88.9%20100%2C89.0%20120%2C88.4%20140%2C87.3%20160%2C85.7%20180%2C83.5%20200%2C81.1%20220%2C78.3%20240%2C75.4%20260%2C72.5%20280%2C69.7%20300%2C67.1%20320%2C64.9%20340%2C63.1%20360%2C61.8%20380%2C61.1%20400%2C61.0%20420%2C61.6%20440%2C62.7%20460%2C64.3%20480%2C66.5%20500%2C68.9%20520%2C71.7%20540%2C74.6%20560%2C77.5%20580%2C80.3%20600%2C82.9%20620%2C85.1%20640%2C86.9%20660%2C88.2%20680%2C88.9%20700%2C89.0%20720%2C88.4%20740%2C87.3%20760%2C85.7%20780%2C83.5%20800%2C81.1%20820%2C78.3%20840%2C75.4%20860%2C72.5%20880%2C69.7%20900%2C67.1%20920%2C64.9%20940%2C63.1%20960%2C61.8%20980%2C61.1%201000%2C61.0%201020%2C61.6%201040%2C62.7%201060%2C64.3%201080%2C66.5%201100%2C68.9%201120%2C71.7%201140%2C74.6%201160%2C77.5%201180%2C80.3%201200%2C82.9%22/%3E%3Cpolyline%20points%3D%220%2C141.8%2020%2C142.8%2040%2C143.0%2060%2C142.4%2080%2C141.1%20100%2C139.0%20120%2C136.4%20140%2C133.2%20160%2C129.7%20180%2C126.0%20200%2C122.3%20220%2C118.6%20240%2C115.3%20260%2C112.3%20280%2C109.9%20300%2C108.2%20320%2C107.2%20340%2C107.0%20360%2C107.6%20380%2C108.9%20400%2C111.0%20420%2C113.6%20440%2C116.8%20460%2C120.3%20480%2C124.0%20500%2C127.7%20520%2C131.4%20540%2C134.7%20560%2C137.7%20580%2C140.1%20600%2C141.8%20620%2C142.8%20640%2C143.0%20660%2C142.4%20680%2C141.1%20700%2C139.0%20720%2C136.4%20740%2C133.2%20760%2C129.7%20780%2C126.0%20800%2C122.3%20820%2C118.6%20840%2C115.3%20860%2C112.3%20880%2C109.9%20900%2C108.2%20920%2C107.2%20940%2C107.0%20960%2C107.6%20980%2C108.9%201000%2C111.0%201020%2C113.6%201040%2C116.8%201060%2C120.3%201080%2C124.0%201100%2C127.7%201120%2C131.4%201140%2C134.7%201160%2C137.7%201180%2C140.1%201200%2C141.8%22/%3E%3Cpolyline%20points%3D%220%2C184.7%2020%2C184.1%2040%2C183.0%2060%2C181.5%2080%2C179.8%20100%2C177.9%20120%2C175.8%20140%2C173.8%20160%2C171.7%20180%2C169.8%20200%2C168.2%20220%2C166.8%20240%2C165.8%20260%2C165.2%20280%2C165.0%20300%2C165.3%20320%2C165.9%20340%2C167.0%20360%2C168.5%20380%2C170.2%20400%2C172.1%20420%2C174.2%20440%2C176.2%20460%2C178.3%20480%2C180.2%20500%2C181.8%20520%2C183.2%20540%2C184.2%20560%2C184.8%20580%2C185.0%20600%2C184.7%20620%2C184.1%20640%2C183.0%20660%2C181.5%20680%2C179.8%20700%2C177.9%20720%2C175.8%20740%2C173.8%20760%2C171.7%20780%2C169.8%20800%2C168.2%20820%2C166.8%20840%2C165.8%20860%2C165.2%20880%2C165.0%20900%2C165.3%20920%2C165.9%20940%2C167.0%20960%2C168.5%20980%2C170.2%201000%2C172.1%201020%2C174.2%201040%2C176.2%201060%2C178.3%201080%2C180.2%201100%2C181.8%201120%2C183.2%201140%2C184.2%201160%2C184.8%201180%2C185.0%201200%2C184.7%22/%3E%3Cpolyline%20points%3D%220%2C234.5%2020%2C232.1%2040%2C229.4%2060%2C226.6%2080%2C223.7%20100%2C220.8%20120%2C218.1%20140%2C215.7%20160%2C213.7%20180%2C212.3%20200%2C211.3%20220%2C211.0%20240%2C211.3%20260%2C212.2%20280%2C213.6%20300%2C215.5%20320%2C217.9%20340%2C220.6%20360%2C223.4%20380%2C226.3%20400%2C229.2%20420%2C231.9%20440%2C234.3%20460%2C236.3%20480%2C237.7%20500%2C238.7%20520%2C239.0%20540%2C238.7%20560%2C237.8%20580%2C236.4%20600%2C234.5%20620%2C232.1%20640%2C229.4%20660%2C226.6%20680%2C223.7%20700%2C220.8%20720%2C218.1%20740%2C215.7%20760%2C213.7%20780%2C212.3%20800%2C211.3%20820%2C211.0%20840%2C211.3%20860%2C212.2%20880%2C213.6%20900%2C215.5%20920%2C217.9%20940%2C220.6%20960%2C223.4%20980%2C226.3%201000%2C229.2%201020%2C231.9%201040%2C234.3%201060%2C236.3%201080%2C237.7%201100%2C238.7%201120%2C239.0%201140%2C238.7%201160%2C237.8%201180%2C236.4%201200%2C234.5%22/%3E%3Cpolyline%20points%3D%220%2C277.5%2020%2C273.8%2040%2C270.1%2060%2C266.6%2080%2C263.5%20100%2C260.8%20120%2C258.8%20140%2C257.5%20160%2C257.0%20180%2C257.3%20200%2C258.3%20220%2C260.1%20240%2C262.5%20260%2C265.4%20280%2C268.8%20300%2C272.5%20320%2C276.2%20340%2C279.9%20360%2C283.4%20380%2C286.5%20400%2C289.2%20420%2C291.2%20440%2C292.5%20460%2C293.0%20480%2C292.7%20500%2C291.7%20520%2C289.9%20540%2C287.5%20560%2C284.6%20580%2C281.2%20600%2C277.5%20620%2C273.8%20640%2C270.1%20660%2C266.6%20680%2C263.5%20700%2C260.8%20720%2C258.8%20740%2C257.5%20760%2C257.0%20780%2C257.3%20800%2C258.3%20820%2C260.1%20840%2C262.5%20860%2C265.4%20880%2C268.8%20900%2C272.5%20920%2C276.2%20940%2C279.9%20960%2C283.4%20980%2C286.5%201000%2C289.2%201020%2C291.2%201040%2C292.5%201060%2C293.0%201080%2C292.7%201100%2C291.7%201120%2C289.9%201140%2C287.5%201160%2C284.6%201180%2C281.2%201200%2C277.5%22/%3E%3Cpolyline%20points%3D%220%2C320.6%2020%2C318.8%2040%2C317.3%2060%2C316.1%2080%2C315.4%20100%2C315.0%20120%2C315.1%20140%2C315.6%20160%2C316.5%20180%2C317.8%20200%2C319.4%20220%2C321.3%20240%2C323.3%20260%2C325.4%20280%2C327.5%20300%2C329.4%20320%2C331.2%20340%2C332.7%20360%2C333.9%20380%2C334.6%20400%2C335.0%20420%2C334.9%20440%2C334.4%20460%2C333.5%20480%2C332.2%20500%2C330.6%20520%2C328.7%20540%2C326.7%20560%2C324.6%20580%2C322.5%20600%2C320.6%20620%2C318.8%20640%2C317.3%20660%2C316.1%20680%2C315.4%20700%2C315.0%20720%2C315.1%20740%2C315.6%20760%2C316.5%20780%2C317.8%20800%2C319.4%20820%2C321.3%20840%2C323.3%20860%2C325.4%20880%2C327.5%20900%2C329.4%20920%2C331.2%20940%2C332.7%20960%2C333.9%20980%2C334.6%201000%2C335.0%201020%2C334.9%201040%2C334.4%201060%2C333.5%201080%2C332.2%201100%2C330.6%201120%2C328.7%201140%2C326.7%201160%2C324.6%201180%2C322.5%201200%2C320.6%22/%3E%3Cpolyline%20points%3D%220%2C362.8%2020%2C361.6%2040%2C361.1%2060%2C361.1%2080%2C361.7%20100%2C363.0%20120%2C364.7%20140%2C366.9%20160%2C369.4%20180%2C372.2%20200%2C375.2%20220%2C378.1%20240%2C380.8%20260%2C383.4%20280%2C385.5%20300%2C387.2%20320%2C388.4%20340%2C388.9%20360%2C388.9%20380%2C388.3%20400%2C387.0%20420%2C385.3%20440%2C383.1%20460%2C380.6%20480%2C377.8%20500%2C374.8%20520%2C371.9%20540%2C369.2%20560%2C366.6%20580%2C364.5%20600%2C362.8%20620%2C361.6%20640%2C361.1%20660%2C361.1%20680%2C361.7%20700%2C363.0%20720%2C364.7%20740%2C366.9%20760%2C369.4%20780%2C372.2%20800%2C375.2%20820%2C378.1%20840%2C380.8%20860%2C383.4%20880%2C385.5%20900%2C387.2%20920%2C388.4%20940%2C388.9%20960%2C388.9%20980%2C388.3%201000%2C387.0%201020%2C385.3%201040%2C383.1%201060%2C380.6%201080%2C377.8%201100%2C374.8%201120%2C371.9%201140%2C369.2%201160%2C366.6%201180%2C364.5%201200%2C362.8%22/%3E%3C/g%3E%3C/svg%3E");
+  --map-filter: none;
+}
+
+/* Dark: explicit choice, or the device setting when the visitor picked System. */
+:root[data-theme='dark'] {
+  --bg: #0d1219;
+  --surface: #151c27;
+  --ink: #e6ebf2;
+  --muted: #a7b2c2;
+  --line: #263142;
+  --navy: #cfdff3;
+  --on-navy: #0d1219;
+  --blue: #7fb6ea;
+  --glow: #4aa3f0;
+  --track: rgba(207, 223, 243, 0.1);
+  --field-border: #5a6880;
+  --danger: #ff8f87;
+  --badge-top: #1b2433;
+  --badge-bottom: #111822;
+  --logo-dark: #dbe6f3;
+  --wash-top: #121924;
+  --wash-bottom: #0b1016;
+  --wash-glow: rgba(46, 139, 220, 0.14);
+  --wave: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22400%22%20viewBox%3D%220%200%201200%20400%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23cfdff3%22%20stroke-opacity%3D%220.05%22%20stroke-width%3D%221%22%3E%3Cpolyline%20points%3D%220%2C25.0%2020%2C27.1%2040%2C29.1%2060%2C30.9%2080%2C32.4%20100%2C33.7%20120%2C34.5%20140%2C34.9%20160%2C34.9%20180%2C34.5%20200%2C33.7%20220%2C32.4%20240%2C30.9%20260%2C29.1%20280%2C27.1%20300%2C25.0%20320%2C22.9%20340%2C20.9%20360%2C19.1%20380%2C17.6%20400%2C16.3%20420%2C15.5%20440%2C15.1%20460%2C15.1%20480%2C15.5%20500%2C16.3%20520%2C17.6%20540%2C19.1%20560%2C20.9%20580%2C22.9%20600%2C25.0%20620%2C27.1%20640%2C29.1%20660%2C30.9%20680%2C32.4%20700%2C33.7%20720%2C34.5%20740%2C34.9%20760%2C34.9%20780%2C34.5%20800%2C33.7%20820%2C32.4%20840%2C30.9%20860%2C29.1%20880%2C27.1%20900%2C25.0%20920%2C22.9%20940%2C20.9%20960%2C19.1%20980%2C17.6%201000%2C16.3%201020%2C15.5%201040%2C15.1%201060%2C15.1%201080%2C15.5%201100%2C16.3%201120%2C17.6%201140%2C19.1%201160%2C20.9%201180%2C22.9%201200%2C25.0%22/%3E%3Cpolyline%20points%3D%220%2C82.9%2020%2C85.1%2040%2C86.9%2060%2C88.2%2080%2C88.9%20100%2C89.0%20120%2C88.4%20140%2C87.3%20160%2C85.7%20180%2C83.5%20200%2C81.1%20220%2C78.3%20240%2C75.4%20260%2C72.5%20280%2C69.7%20300%2C67.1%20320%2C64.9%20340%2C63.1%20360%2C61.8%20380%2C61.1%20400%2C61.0%20420%2C61.6%20440%2C62.7%20460%2C64.3%20480%2C66.5%20500%2C68.9%20520%2C71.7%20540%2C74.6%20560%2C77.5%20580%2C80.3%20600%2C82.9%20620%2C85.1%20640%2C86.9%20660%2C88.2%20680%2C88.9%20700%2C89.0%20720%2C88.4%20740%2C87.3%20760%2C85.7%20780%2C83.5%20800%2C81.1%20820%2C78.3%20840%2C75.4%20860%2C72.5%20880%2C69.7%20900%2C67.1%20920%2C64.9%20940%2C63.1%20960%2C61.8%20980%2C61.1%201000%2C61.0%201020%2C61.6%201040%2C62.7%201060%2C64.3%201080%2C66.5%201100%2C68.9%201120%2C71.7%201140%2C74.6%201160%2C77.5%201180%2C80.3%201200%2C82.9%22/%3E%3Cpolyline%20points%3D%220%2C141.8%2020%2C142.8%2040%2C143.0%2060%2C142.4%2080%2C141.1%20100%2C139.0%20120%2C136.4%20140%2C133.2%20160%2C129.7%20180%2C126.0%20200%2C122.3%20220%2C118.6%20240%2C115.3%20260%2C112.3%20280%2C109.9%20300%2C108.2%20320%2C107.2%20340%2C107.0%20360%2C107.6%20380%2C108.9%20400%2C111.0%20420%2C113.6%20440%2C116.8%20460%2C120.3%20480%2C124.0%20500%2C127.7%20520%2C131.4%20540%2C134.7%20560%2C137.7%20580%2C140.1%20600%2C141.8%20620%2C142.8%20640%2C143.0%20660%2C142.4%20680%2C141.1%20700%2C139.0%20720%2C136.4%20740%2C133.2%20760%2C129.7%20780%2C126.0%20800%2C122.3%20820%2C118.6%20840%2C115.3%20860%2C112.3%20880%2C109.9%20900%2C108.2%20920%2C107.2%20940%2C107.0%20960%2C107.6%20980%2C108.9%201000%2C111.0%201020%2C113.6%201040%2C116.8%201060%2C120.3%201080%2C124.0%201100%2C127.7%201120%2C131.4%201140%2C134.7%201160%2C137.7%201180%2C140.1%201200%2C141.8%22/%3E%3Cpolyline%20points%3D%220%2C184.7%2020%2C184.1%2040%2C183.0%2060%2C181.5%2080%2C179.8%20100%2C177.9%20120%2C175.8%20140%2C173.8%20160%2C171.7%20180%2C169.8%20200%2C168.2%20220%2C166.8%20240%2C165.8%20260%2C165.2%20280%2C165.0%20300%2C165.3%20320%2C165.9%20340%2C167.0%20360%2C168.5%20380%2C170.2%20400%2C172.1%20420%2C174.2%20440%2C176.2%20460%2C178.3%20480%2C180.2%20500%2C181.8%20520%2C183.2%20540%2C184.2%20560%2C184.8%20580%2C185.0%20600%2C184.7%20620%2C184.1%20640%2C183.0%20660%2C181.5%20680%2C179.8%20700%2C177.9%20720%2C175.8%20740%2C173.8%20760%2C171.7%20780%2C169.8%20800%2C168.2%20820%2C166.8%20840%2C165.8%20860%2C165.2%20880%2C165.0%20900%2C165.3%20920%2C165.9%20940%2C167.0%20960%2C168.5%20980%2C170.2%201000%2C172.1%201020%2C174.2%201040%2C176.2%201060%2C178.3%201080%2C180.2%201100%2C181.8%201120%2C183.2%201140%2C184.2%201160%2C184.8%201180%2C185.0%201200%2C184.7%22/%3E%3Cpolyline%20points%3D%220%2C234.5%2020%2C232.1%2040%2C229.4%2060%2C226.6%2080%2C223.7%20100%2C220.8%20120%2C218.1%20140%2C215.7%20160%2C213.7%20180%2C212.3%20200%2C211.3%20220%2C211.0%20240%2C211.3%20260%2C212.2%20280%2C213.6%20300%2C215.5%20320%2C217.9%20340%2C220.6%20360%2C223.4%20380%2C226.3%20400%2C229.2%20420%2C231.9%20440%2C234.3%20460%2C236.3%20480%2C237.7%20500%2C238.7%20520%2C239.0%20540%2C238.7%20560%2C237.8%20580%2C236.4%20600%2C234.5%20620%2C232.1%20640%2C229.4%20660%2C226.6%20680%2C223.7%20700%2C220.8%20720%2C218.1%20740%2C215.7%20760%2C213.7%20780%2C212.3%20800%2C211.3%20820%2C211.0%20840%2C211.3%20860%2C212.2%20880%2C213.6%20900%2C215.5%20920%2C217.9%20940%2C220.6%20960%2C223.4%20980%2C226.3%201000%2C229.2%201020%2C231.9%201040%2C234.3%201060%2C236.3%201080%2C237.7%201100%2C238.7%201120%2C239.0%201140%2C238.7%201160%2C237.8%201180%2C236.4%201200%2C234.5%22/%3E%3Cpolyline%20points%3D%220%2C277.5%2020%2C273.8%2040%2C270.1%2060%2C266.6%2080%2C263.5%20100%2C260.8%20120%2C258.8%20140%2C257.5%20160%2C257.0%20180%2C257.3%20200%2C258.3%20220%2C260.1%20240%2C262.5%20260%2C265.4%20280%2C268.8%20300%2C272.5%20320%2C276.2%20340%2C279.9%20360%2C283.4%20380%2C286.5%20400%2C289.2%20420%2C291.2%20440%2C292.5%20460%2C293.0%20480%2C292.7%20500%2C291.7%20520%2C289.9%20540%2C287.5%20560%2C284.6%20580%2C281.2%20600%2C277.5%20620%2C273.8%20640%2C270.1%20660%2C266.6%20680%2C263.5%20700%2C260.8%20720%2C258.8%20740%2C257.5%20760%2C257.0%20780%2C257.3%20800%2C258.3%20820%2C260.1%20840%2C262.5%20860%2C265.4%20880%2C268.8%20900%2C272.5%20920%2C276.2%20940%2C279.9%20960%2C283.4%20980%2C286.5%201000%2C289.2%201020%2C291.2%201040%2C292.5%201060%2C293.0%201080%2C292.7%201100%2C291.7%201120%2C289.9%201140%2C287.5%201160%2C284.6%201180%2C281.2%201200%2C277.5%22/%3E%3Cpolyline%20points%3D%220%2C320.6%2020%2C318.8%2040%2C317.3%2060%2C316.1%2080%2C315.4%20100%2C315.0%20120%2C315.1%20140%2C315.6%20160%2C316.5%20180%2C317.8%20200%2C319.4%20220%2C321.3%20240%2C323.3%20260%2C325.4%20280%2C327.5%20300%2C329.4%20320%2C331.2%20340%2C332.7%20360%2C333.9%20380%2C334.6%20400%2C335.0%20420%2C334.9%20440%2C334.4%20460%2C333.5%20480%2C332.2%20500%2C330.6%20520%2C328.7%20540%2C326.7%20560%2C324.6%20580%2C322.5%20600%2C320.6%20620%2C318.8%20640%2C317.3%20660%2C316.1%20680%2C315.4%20700%2C315.0%20720%2C315.1%20740%2C315.6%20760%2C316.5%20780%2C317.8%20800%2C319.4%20820%2C321.3%20840%2C323.3%20860%2C325.4%20880%2C327.5%20900%2C329.4%20920%2C331.2%20940%2C332.7%20960%2C333.9%20980%2C334.6%201000%2C335.0%201020%2C334.9%201040%2C334.4%201060%2C333.5%201080%2C332.2%201100%2C330.6%201120%2C328.7%201140%2C326.7%201160%2C324.6%201180%2C322.5%201200%2C320.6%22/%3E%3Cpolyline%20points%3D%220%2C362.8%2020%2C361.6%2040%2C361.1%2060%2C361.1%2080%2C361.7%20100%2C363.0%20120%2C364.7%20140%2C366.9%20160%2C369.4%20180%2C372.2%20200%2C375.2%20220%2C378.1%20240%2C380.8%20260%2C383.4%20280%2C385.5%20300%2C387.2%20320%2C388.4%20340%2C388.9%20360%2C388.9%20380%2C388.3%20400%2C387.0%20420%2C385.3%20440%2C383.1%20460%2C380.6%20480%2C377.8%20500%2C374.8%20520%2C371.9%20540%2C369.2%20560%2C366.6%20580%2C364.5%20600%2C362.8%20620%2C361.6%20640%2C361.1%20660%2C361.1%20680%2C361.7%20700%2C363.0%20720%2C364.7%20740%2C366.9%20760%2C369.4%20780%2C372.2%20800%2C375.2%20820%2C378.1%20840%2C380.8%20860%2C383.4%20880%2C385.5%20900%2C387.2%20920%2C388.4%20940%2C388.9%20960%2C388.9%20980%2C388.3%201000%2C387.0%201020%2C385.3%201040%2C383.1%201060%2C380.6%201080%2C377.8%201100%2C374.8%201120%2C371.9%201140%2C369.2%201160%2C366.6%201180%2C364.5%201200%2C362.8%22/%3E%3C/g%3E%3C/svg%3E");
+  /* Google's embed has no dark mode; invert it and turn the hues back. */
+  --map-filter: invert(0.9) hue-rotate(180deg) brightness(0.95);
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #0d1219;
+    --surface: #151c27;
+    --ink: #e6ebf2;
+    --muted: #a7b2c2;
+    --line: #263142;
+    --navy: #cfdff3;
+    --on-navy: #0d1219;
+    --blue: #7fb6ea;
+    --glow: #4aa3f0;
+    --track: rgba(207, 223, 243, 0.1);
+    --field-border: #5a6880;
+    --danger: #ff8f87;
+    --badge-top: #1b2433;
+    --badge-bottom: #111822;
+    --logo-dark: #dbe6f3;
+    --wash-top: #121924;
+    --wash-bottom: #0b1016;
+    --wash-glow: rgba(46, 139, 220, 0.14);
+    --wave: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22400%22%20viewBox%3D%220%200%201200%20400%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23cfdff3%22%20stroke-opacity%3D%220.05%22%20stroke-width%3D%221%22%3E%3Cpolyline%20points%3D%220%2C25.0%2020%2C27.1%2040%2C29.1%2060%2C30.9%2080%2C32.4%20100%2C33.7%20120%2C34.5%20140%2C34.9%20160%2C34.9%20180%2C34.5%20200%2C33.7%20220%2C32.4%20240%2C30.9%20260%2C29.1%20280%2C27.1%20300%2C25.0%20320%2C22.9%20340%2C20.9%20360%2C19.1%20380%2C17.6%20400%2C16.3%20420%2C15.5%20440%2C15.1%20460%2C15.1%20480%2C15.5%20500%2C16.3%20520%2C17.6%20540%2C19.1%20560%2C20.9%20580%2C22.9%20600%2C25.0%20620%2C27.1%20640%2C29.1%20660%2C30.9%20680%2C32.4%20700%2C33.7%20720%2C34.5%20740%2C34.9%20760%2C34.9%20780%2C34.5%20800%2C33.7%20820%2C32.4%20840%2C30.9%20860%2C29.1%20880%2C27.1%20900%2C25.0%20920%2C22.9%20940%2C20.9%20960%2C19.1%20980%2C17.6%201000%2C16.3%201020%2C15.5%201040%2C15.1%201060%2C15.1%201080%2C15.5%201100%2C16.3%201120%2C17.6%201140%2C19.1%201160%2C20.9%201180%2C22.9%201200%2C25.0%22/%3E%3Cpolyline%20points%3D%220%2C82.9%2020%2C85.1%2040%2C86.9%2060%2C88.2%2080%2C88.9%20100%2C89.0%20120%2C88.4%20140%2C87.3%20160%2C85.7%20180%2C83.5%20200%2C81.1%20220%2C78.3%20240%2C75.4%20260%2C72.5%20280%2C69.7%20300%2C67.1%20320%2C64.9%20340%2C63.1%20360%2C61.8%20380%2C61.1%20400%2C61.0%20420%2C61.6%20440%2C62.7%20460%2C64.3%20480%2C66.5%20500%2C68.9%20520%2C71.7%20540%2C74.6%20560%2C77.5%20580%2C80.3%20600%2C82.9%20620%2C85.1%20640%2C86.9%20660%2C88.2%20680%2C88.9%20700%2C89.0%20720%2C88.4%20740%2C87.3%20760%2C85.7%20780%2C83.5%20800%2C81.1%20820%2C78.3%20840%2C75.4%20860%2C72.5%20880%2C69.7%20900%2C67.1%20920%2C64.9%20940%2C63.1%20960%2C61.8%20980%2C61.1%201000%2C61.0%201020%2C61.6%201040%2C62.7%201060%2C64.3%201080%2C66.5%201100%2C68.9%201120%2C71.7%201140%2C74.6%201160%2C77.5%201180%2C80.3%201200%2C82.9%22/%3E%3Cpolyline%20points%3D%220%2C141.8%2020%2C142.8%2040%2C143.0%2060%2C142.4%2080%2C141.1%20100%2C139.0%20120%2C136.4%20140%2C133.2%20160%2C129.7%20180%2C126.0%20200%2C122.3%20220%2C118.6%20240%2C115.3%20260%2C112.3%20280%2C109.9%20300%2C108.2%20320%2C107.2%20340%2C107.0%20360%2C107.6%20380%2C108.9%20400%2C111.0%20420%2C113.6%20440%2C116.8%20460%2C120.3%20480%2C124.0%20500%2C127.7%20520%2C131.4%20540%2C134.7%20560%2C137.7%20580%2C140.1%20600%2C141.8%20620%2C142.8%20640%2C143.0%20660%2C142.4%20680%2C141.1%20700%2C139.0%20720%2C136.4%20740%2C133.2%20760%2C129.7%20780%2C126.0%20800%2C122.3%20820%2C118.6%20840%2C115.3%20860%2C112.3%20880%2C109.9%20900%2C108.2%20920%2C107.2%20940%2C107.0%20960%2C107.6%20980%2C108.9%201000%2C111.0%201020%2C113.6%201040%2C116.8%201060%2C120.3%201080%2C124.0%201100%2C127.7%201120%2C131.4%201140%2C134.7%201160%2C137.7%201180%2C140.1%201200%2C141.8%22/%3E%3Cpolyline%20points%3D%220%2C184.7%2020%2C184.1%2040%2C183.0%2060%2C181.5%2080%2C179.8%20100%2C177.9%20120%2C175.8%20140%2C173.8%20160%2C171.7%20180%2C169.8%20200%2C168.2%20220%2C166.8%20240%2C165.8%20260%2C165.2%20280%2C165.0%20300%2C165.3%20320%2C165.9%20340%2C167.0%20360%2C168.5%20380%2C170.2%20400%2C172.1%20420%2C174.2%20440%2C176.2%20460%2C178.3%20480%2C180.2%20500%2C181.8%20520%2C183.2%20540%2C184.2%20560%2C184.8%20580%2C185.0%20600%2C184.7%20620%2C184.1%20640%2C183.0%20660%2C181.5%20680%2C179.8%20700%2C177.9%20720%2C175.8%20740%2C173.8%20760%2C171.7%20780%2C169.8%20800%2C168.2%20820%2C166.8%20840%2C165.8%20860%2C165.2%20880%2C165.0%20900%2C165.3%20920%2C165.9%20940%2C167.0%20960%2C168.5%20980%2C170.2%201000%2C172.1%201020%2C174.2%201040%2C176.2%201060%2C178.3%201080%2C180.2%201100%2C181.8%201120%2C183.2%201140%2C184.2%201160%2C184.8%201180%2C185.0%201200%2C184.7%22/%3E%3Cpolyline%20points%3D%220%2C234.5%2020%2C232.1%2040%2C229.4%2060%2C226.6%2080%2C223.7%20100%2C220.8%20120%2C218.1%20140%2C215.7%20160%2C213.7%20180%2C212.3%20200%2C211.3%20220%2C211.0%20240%2C211.3%20260%2C212.2%20280%2C213.6%20300%2C215.5%20320%2C217.9%20340%2C220.6%20360%2C223.4%20380%2C226.3%20400%2C229.2%20420%2C231.9%20440%2C234.3%20460%2C236.3%20480%2C237.7%20500%2C238.7%20520%2C239.0%20540%2C238.7%20560%2C237.8%20580%2C236.4%20600%2C234.5%20620%2C232.1%20640%2C229.4%20660%2C226.6%20680%2C223.7%20700%2C220.8%20720%2C218.1%20740%2C215.7%20760%2C213.7%20780%2C212.3%20800%2C211.3%20820%2C211.0%20840%2C211.3%20860%2C212.2%20880%2C213.6%20900%2C215.5%20920%2C217.9%20940%2C220.6%20960%2C223.4%20980%2C226.3%201000%2C229.2%201020%2C231.9%201040%2C234.3%201060%2C236.3%201080%2C237.7%201100%2C238.7%201120%2C239.0%201140%2C238.7%201160%2C237.8%201180%2C236.4%201200%2C234.5%22/%3E%3Cpolyline%20points%3D%220%2C277.5%2020%2C273.8%2040%2C270.1%2060%2C266.6%2080%2C263.5%20100%2C260.8%20120%2C258.8%20140%2C257.5%20160%2C257.0%20180%2C257.3%20200%2C258.3%20220%2C260.1%20240%2C262.5%20260%2C265.4%20280%2C268.8%20300%2C272.5%20320%2C276.2%20340%2C279.9%20360%2C283.4%20380%2C286.5%20400%2C289.2%20420%2C291.2%20440%2C292.5%20460%2C293.0%20480%2C292.7%20500%2C291.7%20520%2C289.9%20540%2C287.5%20560%2C284.6%20580%2C281.2%20600%2C277.5%20620%2C273.8%20640%2C270.1%20660%2C266.6%20680%2C263.5%20700%2C260.8%20720%2C258.8%20740%2C257.5%20760%2C257.0%20780%2C257.3%20800%2C258.3%20820%2C260.1%20840%2C262.5%20860%2C265.4%20880%2C268.8%20900%2C272.5%20920%2C276.2%20940%2C279.9%20960%2C283.4%20980%2C286.5%201000%2C289.2%201020%2C291.2%201040%2C292.5%201060%2C293.0%201080%2C292.7%201100%2C291.7%201120%2C289.9%201140%2C287.5%201160%2C284.6%201180%2C281.2%201200%2C277.5%22/%3E%3Cpolyline%20points%3D%220%2C320.6%2020%2C318.8%2040%2C317.3%2060%2C316.1%2080%2C315.4%20100%2C315.0%20120%2C315.1%20140%2C315.6%20160%2C316.5%20180%2C317.8%20200%2C319.4%20220%2C321.3%20240%2C323.3%20260%2C325.4%20280%2C327.5%20300%2C329.4%20320%2C331.2%20340%2C332.7%20360%2C333.9%20380%2C334.6%20400%2C335.0%20420%2C334.9%20440%2C334.4%20460%2C333.5%20480%2C332.2%20500%2C330.6%20520%2C328.7%20540%2C326.7%20560%2C324.6%20580%2C322.5%20600%2C320.6%20620%2C318.8%20640%2C317.3%20660%2C316.1%20680%2C315.4%20700%2C315.0%20720%2C315.1%20740%2C315.6%20760%2C316.5%20780%2C317.8%20800%2C319.4%20820%2C321.3%20840%2C323.3%20860%2C325.4%20880%2C327.5%20900%2C329.4%20920%2C331.2%20940%2C332.7%20960%2C333.9%20980%2C334.6%201000%2C335.0%201020%2C334.9%201040%2C334.4%201060%2C333.5%201080%2C332.2%201100%2C330.6%201120%2C328.7%201140%2C326.7%201160%2C324.6%201180%2C322.5%201200%2C320.6%22/%3E%3Cpolyline%20points%3D%220%2C362.8%2020%2C361.6%2040%2C361.1%2060%2C361.1%2080%2C361.7%20100%2C363.0%20120%2C364.7%20140%2C366.9%20160%2C369.4%20180%2C372.2%20200%2C375.2%20220%2C378.1%20240%2C380.8%20260%2C383.4%20280%2C385.5%20300%2C387.2%20320%2C388.4%20340%2C388.9%20360%2C388.9%20380%2C388.3%20400%2C387.0%20420%2C385.3%20440%2C383.1%20460%2C380.6%20480%2C377.8%20500%2C374.8%20520%2C371.9%20540%2C369.2%20560%2C366.6%20580%2C364.5%20600%2C362.8%20620%2C361.6%20640%2C361.1%20660%2C361.1%20680%2C361.7%20700%2C363.0%20720%2C364.7%20740%2C366.9%20760%2C369.4%20780%2C372.2%20800%2C375.2%20820%2C378.1%20840%2C380.8%20860%2C383.4%20880%2C385.5%20900%2C387.2%20920%2C388.4%20940%2C388.9%20960%2C388.9%20980%2C388.3%201000%2C387.0%201020%2C385.3%201040%2C383.1%201060%2C380.6%201080%2C377.8%201100%2C374.8%201120%2C371.9%201140%2C369.2%201160%2C366.6%201180%2C364.5%201200%2C362.8%22/%3E%3C/g%3E%3C/svg%3E");
+    /* Google's embed has no dark mode; invert it and turn the hues back. */
+    --map-filter: invert(0.9) hue-rotate(180deg) brightness(0.95);
+    color-scheme: dark;
+  }
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: var(--step-0);
+  line-height: 1.6;
+  color: var(--ink);
+  background-color: var(--bg);
+  /* Flowing contour lines echo a corrugated profile; a cool wash keeps the steel light. */
+  background-image:
+    var(--wave),
+    radial-gradient(120% 80% at 85% 0%, var(--wash-glow) 0%, transparent 60%),
+    linear-gradient(180deg, var(--wash-top) 0%, var(--wash-bottom) 100%);
+  background-size: 1200px 400px, 100% 100%, 100% 100%;
+  background-repeat: repeat, no-repeat, no-repeat;
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+h1, h2, h3 { font-weight: 600; line-height: 1.08; letter-spacing: -0.02em; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+a { color: var(--blue); }
+:focus-visible { outline: 3px solid var(--glow); outline-offset: 3px; border-radius: 4px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.muted { color: var(--muted); }
+
+.skip {
+  position: absolute; left: 16px; top: -64px; z-index: 100;
+  background: var(--navy); color: var(--on-navy); padding: 8px 16px; border-radius: var(--radius);
+}
+.skip:focus { top: 16px; }
+
+/* ---------- Canvas, HUD, progress ---------- */
+#gl {
+  position: fixed; inset: 0; width: 100vw; height: 100vh; height: 100lvh;
+  z-index: 0; pointer-events: none; display: block;
+}
+.no-webgl #gl, .no-webgl .hud { display: none; }
+main, .site-footer { position: relative; z-index: 1; }
+
+.progress { position: fixed; right: 0; top: 0; bottom: 0; width: 3px; z-index: 30; background: var(--track); }
+.progress span { display: block; height: 100%; background: var(--blue); transform-origin: top; }
+
+.hud {
+  position: fixed; left: var(--gutter); bottom: 24px; z-index: 20;
+  display: grid; gap: 4px; padding: 12px 16px; min-width: 220px;
+  font-size: var(--step--1); font-variant-numeric: tabular-nums; text-transform: uppercase; letter-spacing: 0.08em;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  opacity: 0; visibility: hidden; transition: opacity 0.2s, visibility 0.2s;
+}
+/* Decorative readout (aria-hidden): main.js shows it only over the forge and profile sections. */
+.hud.is-on { opacity: 1; visibility: visible; }
+.hud-tag { color: var(--blue); font-weight: 600; display: flex; align-items: center; gap: 8px; }
+.hud-tag::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--glow); animation: pulse 1.6s ease-in-out infinite; }
+.hud-row { display: flex; align-items: center; gap: 8px; }
+.hud-key { color: var(--muted); width: 64px; }
+.hud-val { color: var(--ink); }
+.hud-chip { width: 12px; height: 12px; border-radius: 2px; background: #6b1e26; border: 1px solid rgba(0, 0, 0, 0.2); }
+@keyframes pulse { 50% { opacity: 0.3; } }
+
+/* ---------- Header ---------- */
+.site-header {
+  position: fixed; inset: 0 0 auto 0; z-index: 40;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 16px var(--gutter);
+  transition: background-color 0.2s, border-color 0.2s;
+  border-bottom: 1px solid transparent;
+}
+.site-header.is-scrolled { background: var(--surface); border-color: var(--line); }
+.brand { display: inline-flex; align-items: center; gap: 12px; color: var(--navy); text-decoration: none; font-weight: 600; }
+.logo { width: 40px; height: 35px; flex: none; }
+.brand-text { font-size: var(--step-1); letter-spacing: -0.01em; white-space: nowrap; }
+.brand-ltd { color: var(--blue); }
+.nav { display: flex; gap: 32px; }
+.nav > a { color: var(--ink); text-decoration: none; font-size: var(--step--1); text-transform: uppercase; letter-spacing: 0.08em; }
+.nav > a:hover { color: var(--blue); }
+.header-cta { display: flex; gap: 8px; }
+.nav-extra, .nav-theme, .nav-toggle { display: none; }
+.nav-toggle {
+  width: 44px; height: 44px; place-items: center; cursor: pointer;
+  background: var(--surface); color: var(--navy); border: 1px solid var(--line); border-radius: var(--radius);
+}
+.nav-toggle-bars { position: relative; width: 20px; height: 14px; }
+.nav-toggle-bars span {
+  position: absolute; left: 0; width: 100%; height: 2px; border-radius: 2px; background: currentColor;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.nav-toggle-bars span:nth-child(1) { top: 0; }
+.nav-toggle-bars span:nth-child(2) { top: 6px; }
+.nav-toggle-bars span:nth-child(3) { top: 12px; }
+.nav-toggle[aria-expanded='true'] .nav-toggle-bars span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav-toggle[aria-expanded='true'] .nav-toggle-bars span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded='true'] .nav-toggle-bars span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+.site-header.menu-open { background: var(--surface); border-color: var(--line); }
+.theme-switch { display: flex; padding: 3px; gap: 2px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.theme-switch button {
+  width: 36px; height: 36px; display: grid; place-items: center; border: 0; border-radius: 6px;
+  background: transparent; color: var(--muted); cursor: pointer; transition: background-color 0.15s, color 0.15s;
+}
+.theme-switch button:hover { color: var(--ink); }
+.theme-switch button[aria-pressed='true'] { background: var(--navy); color: var(--on-navy); }
+.theme-switch svg, .call-icon { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.call-icon { display: none; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 44px; padding: 8px 20px; border-radius: var(--radius);
+  font: inherit; font-weight: 600; font-size: var(--step--1); text-decoration: none; cursor: pointer;
+  border: 1px solid var(--navy); white-space: nowrap; transition: background-color 0.15s, color 0.15s, transform 0.15s;
+}
+.btn:active { transform: translateY(1px); }
+.btn-solid { background: var(--navy); color: var(--on-navy); }
+.btn-solid:hover { background: var(--blue); border-color: var(--blue); }
+.btn-ghost { background: var(--surface); color: var(--navy); }
+.btn-ghost:hover { background: var(--navy); color: var(--on-navy); }
+.btn-lg { min-height: 52px; padding: 12px 28px; font-size: var(--step-0); }
+
+/* ---------- Shared section bits ---------- */
+section { padding: 128px var(--gutter); }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 12px; margin-bottom: 24px;
+  font-size: var(--step--1); text-transform: uppercase; letter-spacing: 0.14em; color: var(--blue); font-weight: 600;
+}
+.idx { color: var(--muted); font-variant-numeric: tabular-nums; }
+.idx::after { content: ''; display: inline-block; width: 32px; height: 1px; background: currentColor; vertical-align: middle; margin-left: 12px; }
+h2 { font-size: var(--step-3); max-width: 18ch; }
+.section-head { max-width: 1280px; margin: 0 auto 64px; }
+.section-lede { margin-top: 24px; max-width: 48ch; color: var(--muted); font-size: var(--step-1); }
+.split-line { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.08em; }
+.split-word { display: inline-block; }
+
+/* ---------- Hero ---------- */
+.hero {
+  min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; justify-content: center;
+  padding-top: 120px; position: relative;
+}
+.hero-copy { max-width: 1280px; width: 100%; margin: 0 auto; }
+.hero h1 { font-size: var(--step-4); max-width: 9ch; color: var(--navy); }
+.lede { margin-top: 32px; max-width: 44ch; font-size: var(--step-1); color: var(--muted); }
+.hero-actions { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 12px; }
+.hero-fallback { display: none; }
+.no-webgl .hero-fallback { display: block; margin: 48px auto 0; max-width: 1280px; width: 100%; border-radius: var(--radius); }
+.scroll-cue {
+  position: absolute; left: 50%; bottom: 32px; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+  font-size: var(--step--1); text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted);
+}
+.scroll-cue span { width: 1px; height: 48px; background: linear-gradient(var(--blue), transparent); animation: cue 1.8s ease-in-out infinite; transform-origin: top; }
+@keyframes cue { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); } 100% { transform: scaleY(1); opacity: 0; } }
+
+/* ---------- Forge ---------- */
+.forge { height: 260vh; padding: 0 var(--gutter); position: relative; }
+.scene-marker { position: absolute; top: 50vh; left: 0; height: 1px; width: 1px; }
+.scene-marker-end { top: auto; bottom: 50vh; }
+.forge-sticky {
+  position: sticky; top: 0; height: 100vh; height: 100svh;
+  max-width: 1280px; margin: 0 auto;
+  display: flex; flex-direction: column; justify-content: space-between; padding: 120px 0 48px;
+}
+.forge-copy { max-width: 40ch; }
+.forge-copy p:last-child { margin-top: 24px; color: var(--muted); }
+.forge-readout { align-self: flex-end; display: grid; justify-items: end; text-align: right; }
+.forge-label, .forge-max { font-size: var(--step--1); text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); }
+.forge-num { display: flex; align-items: baseline; gap: 8px; color: var(--navy); }
+.forge-count { font-size: var(--step-4); font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: -0.04em; }
+.forge-unit { font-size: var(--step-2); color: var(--blue); font-weight: 600; }
+
+/* ---------- Profiles ---------- */
+.profiles { position: relative; padding-bottom: 64px; }
+@media (min-width: 901px) {
+  /* Text sits on the right throughout this section; the sheet owns the left. */
+  .profiles .section-head { display: grid; justify-items: end; text-align: right; }
+}
+.profile-step { min-height: 100vh; display: flex; align-items: center; justify-content: flex-end; max-width: 1280px; margin: 0 auto; }
+.profile-card {
+  width: min(520px, 100%); display: grid; grid-template-columns: 160px 1fr; gap: 24px;
+  padding: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+}
+.profile-card img { width: 160px; height: 220px; object-fit: cover; border-radius: calc(var(--radius) - 4px); }
+.profile-body { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+.code { font-size: var(--step--1); text-transform: uppercase; letter-spacing: 0.14em; color: var(--blue); font-weight: 600; }
+.profile-body h3 { font-size: var(--step-2); }
+.profile-body p:not(.code) { color: var(--muted); }
+.profile-body .btn { margin-top: auto; }
+
+.swatch-dock {
+  position: sticky; bottom: 24px; z-index: 10; margin: 32px auto 0; width: fit-content; max-width: 100%;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; padding: 8px 12px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+}
+.swatch-label { font-size: var(--step--1); text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); padding: 0 8px; }
+.swatch {
+  width: 44px; height: 44px; border-radius: 6px; cursor: pointer;
+  background: var(--c, var(--surface)); border: 2px solid var(--field-border);
+  transition: transform 0.15s, border-color 0.15s;
+}
+.swatch:hover { transform: translateY(-2px); }
+.swatch[aria-pressed='true'] { border-color: var(--navy); box-shadow: inset 0 0 0 2px var(--surface); }
+.swatch-auto { font: 600 0.75rem var(--font); color: var(--navy); }
+.swatch:has(.swatch-auto) { width: auto; padding: 0 8px; }
+
+/* ---------- Roof show (house re-roofed on scroll) ---------- */
+.roof-show { height: 800vh; padding: 0 var(--gutter); position: relative; }
+.roof-sticky {
+  position: sticky; top: 0; height: 100vh; height: 100svh;
+  max-width: 1280px; margin: 0 auto; display: flex; align-items: center;
+}
+.roof-copy { width: min(420px, 100%); }
+.roof-lede { margin-top: 16px; color: var(--muted); }
+.roof-steps { list-style: none; margin: 24px 0 0; padding: 0; display: grid; gap: 4px; }
+.roof-steps li {
+  display: grid; gap: 2px; padding: 8px 12px; border-left: 3px solid var(--line); border-radius: 0 var(--radius) var(--radius) 0;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+.rs-name { font-weight: 600; color: var(--muted); }
+.rs-move { font-size: var(--step--1); color: var(--muted); }
+/* Only the step being laid explains its motion; keeps the list within short viewports. */
+.js .roof-steps li:not(.is-current) .rs-move { display: none; }
+.roof-steps li { padding-top: 6px; padding-bottom: 6px; }
+.roof-steps li.is-done .rs-name { color: var(--ink); }
+.roof-steps li.is-current { border-color: var(--blue); background: var(--surface); }
+.roof-steps li.is-current .rs-name { color: var(--ink); }
+.roof-fallback { display: none; }
+/* No WebGL / reduced motion: no pinned stage, just the list and a real roof photo. */
+.no-webgl .roof-show, .reduced-motion .roof-show, .roof-show.roof-static { height: auto; padding: 128px var(--gutter); }
+.no-webgl .roof-sticky, .reduced-motion .roof-sticky, .roof-static .roof-sticky { position: static; height: auto; flex-wrap: wrap; gap: 48px; align-items: flex-start; }
+.no-webgl .roof-fallback, .reduced-motion .roof-fallback, .roof-static .roof-fallback { display: block; width: min(640px, 100%); border-radius: var(--radius); }
+
+/* ---------- Factory ---------- */
+.factory { padding-left: 0; padding-right: 0; }
+.factory-intro { max-width: 1280px; margin: 0 auto 64px; padding: 0 var(--gutter); }
+.factory-intro p { margin-top: 24px; max-width: 52ch; color: var(--muted); font-size: var(--step-1); }
+.strip-wrap { overflow: hidden; }
+.strip {
+  list-style: none; margin: 0; padding: 0 var(--gutter);
+  display: flex; gap: 24px; width: max-content;
+}
+.strip-item { position: relative; height: min(60vh, 520px); flex: none; }
+.strip-item img { height: 100%; width: auto; object-fit: cover; border-radius: var(--radius); }
+.strip-item span {
+  position: absolute; left: 16px; bottom: 16px; padding: 4px 12px; border-radius: 4px;
+  background: var(--surface); color: var(--ink); font-size: var(--step--1); font-weight: 600;
+}
+
+/* ---------- Projects ---------- */
+.gallery {
+  list-style: none; margin: 0 auto; padding: 0; max-width: 1280px;
+  display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 260px; gap: 16px;
+}
+.g-a { grid-column: span 2; }
+.g-b { grid-row: span 2; }
+.g figure { margin: 0; position: relative; height: 100%; overflow: hidden; border-radius: var(--radius); background: var(--line); }
+.g img { width: 100%; height: 115%; object-fit: cover; }
+.g figcaption {
+  position: absolute; left: 12px; bottom: 12px; padding: 4px 12px; border-radius: 4px;
+  background: var(--surface); font-size: var(--step--1); font-weight: 600;
+}
+
+/* ---------- Why ---------- */
+.why-inner { max-width: 1280px; margin: 0 auto; display: grid; justify-items: end; }
+.why .section-head { margin: 0 0 48px; width: min(640px, 100%); }
+.why-list { list-style: none; margin: 0; padding: 0; width: min(640px, 100%); display: grid; gap: 16px; }
+.why-list li {
+  display: grid; grid-template-columns: 56px 1fr; column-gap: 16px; row-gap: 4px;
+  padding: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+}
+.why-n { grid-row: span 2; font-size: var(--step-2); font-weight: 600; color: var(--blue); font-variant-numeric: tabular-nums; }
+.why-list h3 { font-size: var(--step-1); }
+.why-list p { color: var(--muted); }
+
+/* ---------- Accessories ---------- */
+.acc-grid {
+  list-style: none; margin: 0 auto; padding: 0; max-width: 1280px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+}
+.acc { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; }
+.acc-media { height: 240px; background: var(--line); }
+.acc-media img { width: 100%; height: 100%; object-fit: cover; }
+/* Small product shots from the brochure: shown as round badges, not stretched to fill. */
+.acc-badge { display: grid; place-items: center; background: linear-gradient(180deg, var(--badge-top), var(--badge-bottom)); }
+.acc-badge img { width: 176px; height: 176px; border-radius: 50%; border: 4px solid var(--surface); }
+.acc-body { padding: 20px 24px 24px; display: grid; gap: 8px; }
+.acc h3 { font-size: var(--step-1); }
+.acc p { color: var(--muted); }
+
+/* ---------- Quote ---------- */
+.quote-grid { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; align-items: start; }
+.quote-card, .contact-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(24px, 4vw, 48px); }
+.quote-card h2 { margin-bottom: 12px; }
+.notice { margin-top: 16px; }
+.form { margin-top: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 24px; }
+.field { display: grid; gap: 6px; align-content: start; }
+.field-wide { grid-column: 1 / -1; }
+label { font-size: var(--step--1); font-weight: 600; }
+.opt { color: var(--muted); font-weight: 400; }
+input, select, textarea {
+  font: inherit; color: var(--ink); width: 100%; min-height: 48px; padding: 10px 12px;
+  background: var(--bg); border: 1px solid var(--field-border); border-radius: var(--radius);
+}
+textarea { resize: vertical; min-height: 96px; }
+input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--glow); outline-offset: 1px; }
+[aria-invalid='true'] { border-color: var(--danger); }
+.err { color: var(--danger); font-size: var(--step--1); min-height: 1.2em; }
+.form-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+.form-status { font-size: var(--step--1); }
+.contact-card { display: grid; gap: 12px; }
+.contact-card h3 { font-size: var(--step-2); }
+.contact-big { font-size: var(--step-3); font-weight: 600; color: var(--navy); text-decoration: none; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.contact-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
+.map { filter: var(--map-filter); width: 100%; height: 260px; border: 1px solid var(--line); border-radius: var(--radius); }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px;
+  padding: 32px var(--gutter) 120px; border-top: 1px solid var(--line); background: var(--surface);
+  font-size: var(--step--1);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  /* Without JavaScript the toggle can't work, so the links stay hidden and the page scrolls as normal. */
+  .nav { display: none; }
+  .js .nav-toggle { display: grid; }
+  .js .nav.is-open {
+    display: flex; flex-direction: column; gap: 0;
+    position: absolute; top: 100%; left: 0; right: 0;
+    max-height: calc(100dvh - 76px); overflow-y: auto;
+    padding: 8px var(--gutter) 24px; background: var(--surface); border-bottom: 1px solid var(--line);
+  }
+  .nav.is-open > a { padding: 14px 0; border-bottom: 1px solid var(--line); font-size: var(--step-1); text-transform: none; letter-spacing: 0; }
+  .nav.is-open .nav-extra { display: grid; gap: 12px; padding-top: 20px; }
+  .nav-extra-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .nav-extra .btn { min-height: 48px; }
+  .acc-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 900px) {
+  .header-quote { display: none; }
+  section { padding-top: 96px; padding-bottom: 96px; }
+  .hud { display: none; }
+  .hero { justify-content: flex-end; padding-bottom: 96px; }
+  .hero-copy { padding-top: 32vh; }
+  .profile-step { align-items: flex-end; justify-content: center; padding-bottom: 96px; }
+  .why-inner { justify-items: stretch; }
+  .gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 200px; }
+  .g-a { grid-column: span 2; }
+  .quote-grid { grid-template-columns: 1fr; }
+  .strip-wrap { overflow-x: auto; scroll-snap-type: x mandatory; }
+  .strip-item { scroll-snap-align: start; height: 320px; }
+  .forge-readout { align-self: flex-start; justify-items: start; text-align: left; }
+  .roof-sticky { align-items: flex-end; padding-bottom: 32px; }
+  .roof-copy { padding: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); width: 100%; }
+  .roof-copy h2 { font-size: var(--step-2); }
+  .roof-lede { display: none; }
+  .js .roof-steps li:not(.is-current) { display: none; }
+  .roof-steps { margin-top: 12px; }
+}
+
+@media (max-width: 600px) {
+  .hide-sm { display: none; }
+  .header-cta > .theme-switch { display: none; }
+  .nav.is-open .nav-theme { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; }
+  .nav-theme-label { font-size: var(--step--1); color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+  .nav-extra-row { grid-template-columns: 1fr; }
+  .brand-ltd { display: none; }
+  .call-text { display: none; }
+  .call-icon { display: block; }
+  .btn-call { padding: 8px 12px; }
+  .theme-switch button { width: 32px; height: 36px; }
+  .brand-text { font-size: var(--step-0); }
+  .brand { gap: 8px; }
+  .logo { width: 32px; height: 28px; }
+  .site-header .btn { padding: 8px 12px; }
+  .profile-card { grid-template-columns: 1fr; }
+  .profile-card img { width: 100%; height: 180px; }
+  .form { grid-template-columns: 1fr; }
+  .acc-grid { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: 1fr; }
+  .g-a { grid-column: auto; }
+  .g-b { grid-row: auto; }
+  .profile-step { padding-bottom: 112px; }
+  .swatch-dock { gap: 4px; padding: 8px; flex-wrap: nowrap; }
+  .swatch-label { display: none; }
+  .swatch { width: 34px; height: 34px; flex: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

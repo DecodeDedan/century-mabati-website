@@ -1,0 +1,50 @@
+{
+  "entries": {
+    "cmd-1791194339369": {
+      "key": "cmd-1791194339369",
+      "value": "{\"command\":\"cd /Users/okwared/Softwares/Karanja/century-mabati/blender/out && S=/private/tmp/claude-501/-Users-okwared-Softwares-Karanja/e4c7b940-6be8-4cfe-ab12-303ed08234fd/scratchpad; ffmpeg -loglevel error -y -i c868.png -i cwave.png -i c800.png -i c840.png -i it5.png -i corrugated.png -i stone_roman.png -i stone_shake.png -filter_complex \\\"[0][1][2][3]hstack=4[top];[4][5][6][7]hstack=4[bot];[top][bot]vstack,scale=2000:-1\\\" $S/renders.jpg && echo ok\",\"exitCode\":0,\"success\":true}",
+      "namespace": "commands",
+      "storedAt": "2026-10-05T09:58:59.369Z",
+      "lastAccessed": "2026-10-05T09:58:59.369Z",
+      "accessCount": 0,
+      "expiresAt": "2026-11-04T09:58:59.369Z"
+    },
+    "cmd-1791194382523": {
+      "key": "cmd-1791194382523",
+      "value": "{\"command\":\"cd /Users/okwared/Softwares/Karanja/century-mabati/blender && python3 - <<'EOF'\\np='build_profiles.py'; s=open(p).read()\\nreps=[\\n('    return squash + (1.0 - squash) * smoothstep(0.0, 0.28, s)','    return squash + (1.0 - squash) * smoothstep(0.0, 0.15, s)'),\\n('    return 1.0 - 0.28 * smoothstep(0.78, 1.0, s)','    return 1.0 - 0.12 * smoothstep(0.8, 1.0, s)'),\\n('course=240, lip=32, step=17, squash=0.4,','course=240, lip=32, step=17, squash=0.75,'),\\n('course=290, lip=46, step=19, squash=0.35,','course=290, lip=46, step=19, squash=0.75,'),\\n('pitch=70, rib=10, course=175, lip=12, step=15,','pitch=70, rib=13, course=175, lip=12, step=15,'),\\n('        return p[\\\"height\\\"] * (roll + 0.4 * pan) * nose(s, 0.5) * lip_roll(s) + step_rise(s, p[\\\"step\\\"])','        return p[\\\"height\\\"] * (roll + 0.4 * pan) * nose(s, 0.8) * lip_roll(s) + step_rise(s, p[\\\"step\\\"])'),\\n('        rib = roman_barrel(t, 0.45)\\\\n        s = tile_s(y, p[\\\"course\\\"], p[\\\"lip\\\"], rib)\\\\n        return p[\\\"rib\\\"] * rib * nose(s, 0.8) + step_rise(s, p[\\\"step\\\"])',\\n '        rib = roman_barrel(t, 0.25)\\\\n        s = tile_s(y, p[\\\"course\\\"], p[\\\"lip\\\"], rib)\\\\n        return p[\\\"rib\\\"] * rib * nose(s, 0.9) + step_rise(s, p[\\\"step\\\"])'),\\n('        return p[\\\"barrel\\\"] * b * nose(s, 0.3) * lip_roll(s) + butt','        return p[\\\"barrel\\\"] * b * nose(s, 0.7) * lip_roll(s) + butt'),\\n('    cam.location = (0.55 * w, -1.45 * w, 0.75 * w)','    cam.location = (0.35 * w, -1.6 * w, 0.9 * w)'),\\n]\\nfor a,b in reps:\\n    assert a in s, a[:70]\\n    s=s.replace(a,b)\\nopen(p,'w').write(s)\\nEOF\\n/Applications/Blender.app/Contents/MacOS/Blender -b --python build_profiles.py -- --render --only c868,cwave,c800,c840,stone_roman 2>&1 | grep -E \\\"\\\\[century\\\\]|Error|Traceback\\\"; S=/private/tmp/claude-501/-Users-okwared-Softwares-Karanja/e4c7b940-6be8-4cfe-ab12-303ed08234fd/scratchpad; cd out && ffmpeg -loglevel error -y -i c868.png -i cwave.png -i c800.png -i c840.png -filter_complex \\\"[0][1][2][3]hstack=4,scale=2000:-1\\\" $S/renders2.jpg && echo ok\",\"exitCode\":0,\"success\":true}",
+      "namespace": "commands",
+      "storedAt": "2026-10-05T09:59:42.523Z",
+      "lastAccessed": "2026-10-05T09:59:42.523Z",
+      "accessCount": 0,
+      "expiresAt": "2026-11-04T09:59:42.523Z"
+    },
+    "cmd-1791194413429": {
+      "key": "cmd-1791194413429",
+      "value": "{\"command\":\"cd /Users/okwared/Softwares/Karanja/century-mabati/blender && python3 - <<'EOF'\\np='build_profiles.py'; s=open(p).read()\\nreps=[\\n('course=240, lip=32, step=17, squash=0.75,','course=240, lip=32, step=17, squash=1.0,'),\\n('course=290, lip=46, step=19, squash=0.75,','course=290, lip=46, step=19, squash=1.0,'),\\n('nose(s, 0.8) * lip_roll(s) + step_rise(s, p[\\\"step\\\"])','nose(s, 1.0) * lip_roll(s) + step_rise(s, p[\\\"step\\\"])'),\\n('    scene.collection.objects.link(sun)\\\\n    return scene','''    scene.collection.objects.link(sun)\\n    # Soft fill from up-slope so barrel crests catch a lengthwise highlight, as on the sample board.\\n    fill_data = bpy.data.lights.new(\\\"Fill\\\", \\\"AREA\\\")\\n    fill_data.energy = 400.0\\n    fill_data.size = 3.0\\n    fill = bpy.data.objects.new(\\\"Fill\\\", fill_data)\\n    fill.location = (-1.0, 2.0, 2.5)\\n    fill.rotation_euler = (math.radians(-40), math.radians(-20), 0.0)\\n    scene.collection.objects.link(fill)\\n    return scene'''),\\n]\\nfor a,b in reps:\\n    assert a in s, a[:70]\\n    s=s.replace(a,b)\\nopen(p,'w').write(s)\\nEOF\\n/Applications/Blender.app/Contents/MacOS/Blender -b --python build_profiles.py -- --render --only c868,cwave,c800,c840 2>&1 | grep -E \\\"\\\\[century\\\\]|Error|Traceback\\\"; S=/private/tmp/claude-501/-Users-okwared-Softwares-Karanja/e4c7b940-6be8-4cfe-ab12-303ed08234fd/scratchpad; cd out && ffmpeg -loglevel error -y -i c868.png -i cwave.png -i c800.png -i c840.png -filter_complex \\\"[0][1][2][3]hstack=4,scale=2000:-1\\\" $S/renders3.jpg && echo ok\",\"exitCode\":0,\"success\":true}",
+      "namespace": "commands",
+      "storedAt": "2026-10-05T10:00:13.429Z",
+      "lastAccessed": "2026-10-05T10:00:13.429Z",
+      "accessCount": 0,
+      "expiresAt": "2026-11-04T10:00:13.429Z"
+    },
+    "cmd-1791194443097": {
+      "key": "cmd-1791194443097",
+      "value": "{\"command\":\"cd /Users/okwared/Softwares/Karanja/century-mabati && sed -i '' 's/    fill_data.energy = 400.0/    fill_data.energy = 120.0/' blender/build_profiles.py && grep -c \\\"energy = 120.0\\\" blender/build_profiles.py && python3 - <<'EOF'\\np='src/sheetShader.js'; s=open(p).read()\\nreps=[\\n(\\\"romanTile(x, p.y, W / 6.0, 0.12, 0.066, 0.62, 0.08, 0.045, 0.4)\\\",\\\"romanTile(x, p.y, W / 6.0, 0.12, 0.066, 0.62, 0.08, 0.045, 1.0)\\\"),\\n(\\\"romanTile(x, p.y, W / 4.5, 0.16, 0.092, 0.74, 0.11, 0.05, 0.35)\\\",\\\"romanTile(x, p.y, W / 4.5, 0.16, 0.092, 0.74, 0.11, 0.05, 1.0)\\\"),\\n(\\\"0.05 * (roll + pan * 0.4) * nose(s2, 0.5)\\\",\\\"0.05 * (roll + pan * 0.4) * nose(s2, 1.0)\\\"),\\n(\\\"nose(ss, 0.3)\\\",\\\"nose(ss, 0.7)\\\"),\\n(\\\"float nose(float s, float squash) { return mix(squash, 1.0, smoothstep(0.0, 0.28, s)); }\\\",\\\"float nose(float s, float squash) { return mix(squash, 1.0, smoothstep(0.0, 0.15, s)); }\\\"),\\n(\\\"float lipRoll(float s) { return 1.0 - 0.28 * smoothstep(0.78, 1.0, s); }\\\",\\\"float lipRoll(float s) { return 1.0 - 0.12 * smoothstep(0.8, 1.0, s); }\\\"),\\n]\\nfor a,b in reps:\\n    assert a in s, a[:60]\\n    s=s.replace(a,b)\\nopen(p,'w').write(s)\\nEOF\\ncd blender && /Applications/Blender.app/Contents/MacOS/Blender -b --python build_profiles.py -- --render 2>&1 | grep -E \\\"\\\\[century\\\\]|Error|Traceback\\\"; S=/private/tmp/claude-501/-Users-okwared-Softwares-Karanja/e4c7b940-6be8-4cfe-ab12-303ed08234fd/scratchpad; cd out && ffmpeg -loglevel error -y -i c868.png -i cwave.png -i c800.png -i c840.png -i it5.png -i corrugated.png -i stone_roman.png -i stone_shake.png -filter_complex \\\"[0][1][2][3]hstack=4[top];[4][5][6][7]hstack=4[bot];[top][bot]vstack,scale=2000:-1\\\" $S/renders4.jpg && cp $S/renders4.jpg /Users/okwared/Softwares/Karanja/century-mabati/blender/out/contact-sheet.jpg && echo ok\",\"exitCode\":0,\"success\":true}",
+      "namespace": "commands",
+      "storedAt": "2026-10-05T10:00:43.097Z",
+      "lastAccessed": "2026-10-05T10:00:43.097Z",
+      "accessCount": 0,
+      "expiresAt": "2026-11-04T10:00:43.097Z"
+    },
+    "cmd-1791195091576": {
+      "key": "cmd-1791195091576",
+      "value": "{\"command\":\"/Applications/Blender.app/Contents/MacOS/Blender -b --python build_profiles.py -- --render 2>&1 | grep -E \\\"\\\\[century\\\\]|Error|Traceback\\\"; S=/private/tmp/claude-501/-Users-okwared-Softwares-Karanja/e4c7b940-6be8-4cfe-ab12-303ed08234fd/scratchpad; cd out && ffmpeg -loglevel error -y -i c868.png -i cwave.png -i c800.png -i c840.png -i it5.png -i corrugated.png -i stone_roman.png -i stone_shake.png -filter_complex \\\"[0][1][2][3]hstack=4[top];[4][5][6][7]hstack=4[bot];[top][bot]vstack,scale=2000:-1\\\" contact-sheet.jpg && ls -la board_*.png contact-sheet.jpg century_display_board.blend | awk '{print $5, $9}'\",\"exitCode\":0,\"success\":true}",
+      "namespace": "commands",
+      "storedAt": "2026-10-05T10:11:31.576Z",
+      "lastAccessed": "2026-10-05T10:11:31.576Z",
+      "accessCount": 0,
+      "expiresAt": "2026-11-04T10:11:31.576Z"
+    }
+  },
+  "version": "3.0.0"
+}

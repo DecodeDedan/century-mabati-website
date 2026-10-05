@@ -1,0 +1,41 @@
+{
+  "entries": {
+    "cmd-1791190151269": {
+      "key": "cmd-1791190151269",
+      "value": "{\"command\":\"set -e; P=/Users/okwared/Softwares/Karanja/century-mabati; S=/private/tmp/claude-501/-Users-okwared-Softwares-Karanja/e4c7b940-6be8-4cfe-ab12-303ed08234fd/scratchpad/src; mkdir -p $P/public/img $P/src; cd $P/public/img\\nconv(){ sips -s format jpeg -s formatOptions 74 -Z $3 \\\"$S/$1.jpg\\\" --out \\\"$2.jpg\\\" >/dev/null; }\\nconv 01 home-brown-stone 1600; conv 02 home-villa 1400; conv 14 home-grey 1400; conv 15 home-handover 1400; conv 16 home-maroon 1400; conv 19 home-charcoal 1400; conv 26 home-modern 1400; conv 34 home-red 1400; conv 36 home-green 1400; conv 38 home-grey-tile 1400; conv 20 home-install 1400\\nconv 31 factory-trucks 1800; conv 32 factory-yard 1600; conv 35 long-12m 1400; conv 25 showroom 1400\\nconv 06 machine-blue 1200; conv 39 machine-box 1200; conv 30 machine-red 1400; conv 40 machine-charcoal 1200\\nconv 42 p-c868 1000; conv 43 p-cwave 1000; conv 10 p-c800 1000; conv 05 p-c840 1000; conv 18 p-corrugated 1000; conv 13 p-box 1000; conv 23 p-stone 1000; conv 37 p-translucent 1000; conv 09 range-board 1600; conv 24 coil 1000\\nfor f in *.jpg; do echo \\\"$f $(sips -g pixelWidth -g pixelHeight $f | awk '/pixel/{printf $2\\\"x\\\"}') $(du -k $f | cut -f1)k\\\"; done\",\"exitCode\":0,\"success\":true}",
+      "namespace": "commands",
+      "storedAt": "2026-10-05T08:49:11.269Z",
+      "lastAccessed": "2026-10-05T08:49:11.269Z",
+      "accessCount": 0,
+      "expiresAt": "2026-11-04T08:49:11.269Z"
+    },
+    "cmd-1791190163188": {
+      "key": "cmd-1791190163188",
+      "value": "{\"command\":\"set -e; P=/Users/okwared/Softwares/Karanja/century-mabati; S=/private/tmp/claude-501/-Users-okwared-Softwares-Karanja/e4c7b940-6be8-4cfe-ab12-303ed08234fd/scratchpad/src; cd $P/public/img; rm -f *.jpg\\nconv(){ src=\\\"$S/$1.jpg\\\"; m=$(sips -g pixelWidth -g pixelHeight \\\"$src\\\" | awk '/pixel/{print $2}' | sort -n | tail -1); z=$3; [ $m -lt $z ] && z=$m; sips -s format jpeg -s formatOptions 66 -Z $z \\\"$src\\\" --out \\\"$2.jpg\\\" >/dev/null; }\\nconv 01 home-brown-stone 1600; conv 02 home-villa 1200; conv 14 home-grey 1200; conv 15 home-handover 1200; conv 16 home-maroon 1200; conv 19 home-charcoal 1200; conv 26 home-modern 1200; conv 34 home-red 1200; conv 36 home-green 1200; conv 38 home-grey-tile 1200; conv 20 home-install 1200\\nconv 31 factory-trucks 1800; conv 32 factory-yard 1600; conv 35 long-12m 1200; conv 25 showroom 1200\\nconv 06 machine-blue 1100; conv 39 machine-box 1100; conv 30 machine-red 1200; conv 40 machine-charcoal 1100\\nconv 42 p-c868 900; conv 43 p-cwave 900; conv 10 p-c800 900; conv 05 p-c840 900; conv 18 p-corrugated 900; conv 13 p-box 900; conv 23 p-stone 900; conv 37 p-translucent 900; conv 09 range-board 1400; conv 24 coil 900\\nfor f in *.jpg; do echo \\\"$f $(sips -g pixelWidth -g pixelHeight $f | awk '/pixel/{printf $2\\\" \\\"}')\\\"; done; du -sh .\",\"exitCode\":0,\"success\":true}",
+      "namespace": "commands",
+      "storedAt": "2026-10-05T08:49:23.188Z",
+      "lastAccessed": "2026-10-05T08:49:23.188Z",
+      "accessCount": 0,
+      "expiresAt": "2026-11-04T08:49:23.188Z"
+    },
+    "cmd-1791191537672": {
+      "key": "cmd-1791191537672",
+      "value": "{\"command\":\"S=/private/tmp/claude-501/-Users-okwared-Softwares-Karanja/e4c7b940-6be8-4cfe-ab12-303ed08234fd/scratchpad; mkdir -p $S/u; cd /Users/okwared/Softwares/Karanja/century-mabati/public/img; i=0; for f in *.jpg; do i=$((i+1)); n=$(printf \\\"%02d\\\" $i); echo \\\"$n $f\\\"; sips -s format jpeg -Z 300 --padToHeightWidth 300 300 --padColor 222222 \\\"$f\\\" --out $S/u/$n.jpg >/dev/null 2>&1; done; ffmpeg -loglevel error -y -framerate 1 -i $S/u/%02d.jpg -vf \\\"tile=6x5:padding=4\\\" -frames:v 1 $S/used.jpg\",\"exitCode\":0,\"success\":true}",
+      "namespace": "commands",
+      "storedAt": "2026-10-05T09:12:17.672Z",
+      "lastAccessed": "2026-10-05T09:12:17.672Z",
+      "accessCount": 0,
+      "expiresAt": "2026-11-04T09:12:17.672Z"
+    },
+    "cmd-1791196206688": {
+      "key": "cmd-1791196206688",
+      "value": "{\"command\":\"cd /Users/okwared/Softwares/Karanja/century-mabati/public/img && S=/private/tmp/claude-501/-Users-okwared-Softwares-Karanja/e4c7b940-6be8-4cfe-ab12-303ed08234fd/scratchpad; ffmpeg -loglevel error -y -i home-villa.jpg -i home-handover.jpg -i home-maroon.jpg -i home-red.jpg -i home-brown-stone.jpg -i home-modern.jpg -filter_complex \\\"[0]scale=-1:420[a];[1]scale=-1:420[b];[2]scale=-1:420[c];[3]scale=-1:420[d];[4]scale=-1:420[e];[5]scale=-1:420[f];[a][b][c]hstack=3[t];[d][e][f]hstack=3[u];[t]scale=2100:-1[t2];[u]scale=2100:-1[u2];[t2][u2]vstack\\\" $S/houses-ref.jpg && echo ok\",\"exitCode\":0,\"success\":true}",
+      "namespace": "commands",
+      "storedAt": "2026-10-05T10:30:06.688Z",
+      "lastAccessed": "2026-10-05T10:30:06.688Z",
+      "accessCount": 0,
+      "expiresAt": "2026-11-04T10:30:06.688Z"
+    }
+  },
+  "version": "3.0.0"
+}
