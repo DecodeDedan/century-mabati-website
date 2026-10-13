@@ -1,37 +1,8 @@
 import { describe, expect, test } from 'vitest'
-import { blend, locate, NUMERIC_KEYS } from './keyframes.js'
-import { buildQuote } from './quote.js'
+import { readFileSync } from 'node:fs'
+import { buildQuote, PRODUCTS } from './quote.js'
 import { resolveTheme, sanitizeChoice } from './theme.js'
-import { MODES, ROOF_STEPS, roofState } from './roofTimeline.js'
-import { BARE } from './sheetShader.js'
-
-describe('roofState', () => {
-  test('starts on bare battens with the house hidden', () => {
-    const s = roofState(0)
-    expect(s).toMatchObject({ index: 0, from: BARE, to: ROOF_STEPS[0].profile, t: 0, presence: 0 })
-  })
-
-  test('each step transitions, then holds the finished roof before the next', () => {
-    const slot = 0.88 / ROOF_STEPS.length // active range is 0.06..0.94
-    const holding = roofState(0.06 + slot * 3 + slot * 0.9)
-    expect(holding.index).toBe(3)
-    expect(holding.t).toBe(1)
-    expect(holding.from).toBe(ROOF_STEPS[2].profile)
-    expect(holding.mode).toBe(MODES[ROOF_STEPS[3].mode])
-    expect(roofState(0.06 + slot * 3 + slot * 0.2).t).toBeLessThan(1)
-  })
-
-  test('ends on the last profile and clamps out-of-range progress', () => {
-    const end = roofState(5)
-    expect(end.index).toBe(ROOF_STEPS.length - 1)
-    expect(end.presence).toBe(0)
-    expect(roofState(-1)).toMatchObject({ index: 0, t: 0 })
-  })
-
-  test('the house is fully present through the middle of the section', () => {
-    expect(roofState(0.5).presence).toBe(1)
-  })
-})
+import { estimateMessage, estimateRoof } from './estimate.js'
 
 describe('theme', () => {
   test('system follows the device preference', () => {
@@ -51,41 +22,8 @@ describe('theme', () => {
   })
 })
 
-const anchors = [{ pos: 0 }, { pos: 100 }, { pos: 300 }]
-
-describe('locate', () => {
-  test('clamps above the first and below the last anchor', () => {
-    expect(locate(anchors, -50)).toEqual({ a: 0, b: 0, t: 0 })
-    expect(locate(anchors, 999)).toEqual({ a: 2, b: 2, t: 0 })
-  })
-
-  test('finds the bracketing pair with eased progress', () => {
-    const r = locate(anchors, 200)
-    expect([r.a, r.b]).toEqual([1, 2])
-    expect(r.t).toBeCloseTo(0.5)
-    expect(locate(anchors, 125).t).toBeLessThan(0.125) // eased start is slower than linear
-  })
-
-  test('survives anchors that collapse to the same position', () => {
-    expect(locate([{ pos: 0 }, { pos: 0 }, { pos: 10 }], 5)).toMatchObject({ a: 1, b: 2 })
-  })
-
-  test('throws when there are no anchors', () => {
-    expect(() => locate([], 0)).toThrow()
-  })
-})
-
-describe('blend', () => {
-  const base = Object.fromEntries(NUMERIC_KEYS.map((k) => [k, 0]))
-  test('interpolates numbers and passes profile/colour pairs through', () => {
-    const out = blend({ ...base, x: 0, profile: 1, color: '#000' }, { ...base, x: 10, profile: 4, color: '#fff' }, 0.25)
-    expect(out.x).toBe(2.5)
-    expect(out).toMatchObject({ profileA: 1, profileB: 4, profileMix: 0.25, colorA: '#000', colorB: '#fff' })
-  })
-})
-
 describe('buildQuote', () => {
-  const valid = { name: 'Wanjiku', phone: '0712 345 678', product: 'C-Wave', colour: 'Maroon', length: '3.5', quantity: '40', town: 'Molo', notes: '' }
+  const valid = { name: 'Wanjiku', phone: '0712 345 678', product: 'Wavetile', colour: 'Maroon', length: '3.5', quantity: '40', town: 'Molo', notes: '' }
 
   test('builds a WhatsApp link with the full enquiry', () => {
     const r = buildQuote(valid)
@@ -114,5 +52,50 @@ describe('buildQuote', () => {
 
   test('accepts the 12 m boundary', () => {
     expect(buildQuote({ ...valid, length: '12' }).ok).toBe(true)
+  })
+})
+
+describe('product cards', () => {
+  test('every "Get a quote" button preselects a product the form offers', () => {
+    const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8')
+    const names = [...html.matchAll(/data-quote-product="([^"]+)"/g)].map((m) => m[1])
+    expect(names.length).toBe(10)
+    for (const name of names) expect(PRODUCTS).toContain(name)
+  })
+})
+
+describe('estimateRoof', () => {
+  const house = { type: 'gable', length: '10', width: '8', pitch: '25', overhang: '0.5' }
+
+  test('gable: sheet cut to the slope, area over cos(pitch), ridge spans the overhangs', () => {
+    const e = estimateRoof(house)
+    expect(e).toMatchObject({ ok: true, sheetLength: 5, area: 110, ridge: 11, hips: 0, overLength: false })
+  })
+
+  test('hip: same area and sheet length, short ridge plus four hips', () => {
+    const e = estimateRoof({ ...house, type: 'hip' })
+    expect(e).toMatchObject({ sheetLength: 5, area: 110, ridge: 2, hips: 26.8 })
+  })
+
+  test('width and length can be entered either way round', () => {
+    expect(estimateRoof({ ...house, length: '8', width: '10' })).toMatchObject({ sheetLength: 5, ridge: 11 })
+  })
+
+  test('flags slopes longer than a 12 m sheet', () => {
+    expect(estimateRoof({ ...house, length: '30', width: '25', pitch: '30' }).overLength).toBe(true)
+  })
+
+  test('accepts a zero overhang and rejects blanks, out-of-range values and unknown roof types', () => {
+    expect(estimateRoof({ ...house, overhang: '0' }).ok).toBe(true)
+    const r = estimateRoof({ type: 'dome', length: '', width: '41', pitch: '4', overhang: '2' })
+    expect(Object.keys(r.errors).sort()).toEqual(['length', 'overhang', 'pitch', 'type', 'width'])
+  })
+
+  test('builds a WhatsApp message with the measurements and results', () => {
+    const { message, url } = estimateMessage(estimateRoof({ ...house, type: 'hip' }))
+    expect(url.startsWith('https://wa.me/254718035476?text=')).toBe(true)
+    expect(message).toContain('Hip (four slopes), 10 m × 8 m, pitch 25°')
+    expect(message).toContain('Sheet length: 5.0 m')
+    expect(message).toContain('hips: 26.8 m')
   })
 })

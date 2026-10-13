@@ -6,35 +6,38 @@ const HEADER_OFFSET = -72
 
 // All hidden start states are written here at runtime, never in CSS, so the
 // page is complete and readable if this module never loads.
-export function initMotion({ reducedMotion, onRefresh }) {
-  const header = document.querySelector('.site-header')
-  const syncHeader = () => header.classList.toggle('is-scrolled', window.scrollY > 40)
-  window.addEventListener('scroll', syncHeader, { passive: true })
-  syncHeader()
-
+export function initMotion({ reducedMotion }) {
   if (reducedMotion) {
-    return { scrollTo: (el) => el.scrollIntoView({ block: 'start' }) }
+    return { scrollTo: (el) => el.scrollIntoView({ block: 'start' }), refresh: () => {} }
   }
 
   gsap.registerPlugin(ScrollTrigger)
+  // Phone address bars resize the viewport mid-scroll; re-measuring then would make pinned rails jump.
+  ScrollTrigger.config({ ignoreMobileResize: true })
   const lenis = new Lenis({ autoRaf: false, lerp: 0.09, anchors: { offset: HEADER_OFFSET } })
   lenis.on('scroll', ScrollTrigger.update)
   gsap.ticker.add((time) => lenis.raf(time * 1000))
   gsap.ticker.lagSmoothing(0)
-  ScrollTrigger.addEventListener('refresh', onRefresh)
 
   gsap.fromTo('.progress span', { scaleY: 0 }, { scaleY: 1, ease: 'none', scrollTrigger: { start: 0, end: 'max', scrub: true } })
 
-  // The H1 is the LCP element, so it is never hidden; only its neighbours animate in.
+  // The factory photo is the LCP element and the H1 sits on it: neither is ever hidden; only the copy around them animates in.
   gsap.from('[data-hero]', { y: 24, opacity: 0, duration: 0.9, stagger: 0.12, ease: 'power3.out', delay: 0.1 })
-  gsap.from('#gl', { opacity: 0, duration: 1.4, ease: 'power2.out' })
+  // Scroll-only drift: the photo starts in place, so it paints at full strength before any JS runs.
+  // Desktop only: on phones the photo sits in the flow above the copy, so drifting it would cover the headline.
+  gsap.matchMedia().add('(min-width: 901px)', () => {
+    gsap.to('.hero-bg', { yPercent: 10, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } })
+  })
 
   splitHeadings()
   revealOnEnter()
   parallax()
-  factoryStrip()
+  // Phones: products slide sideways as you scroll down; the factory strip does on every screen size.
+  horizontalScroll('.product-rail', '.product-grid', '(max-width: 900px)')
+  horizontalScroll('.strip-wrap', '.strip', 'all')
 
-  return { scrollTo: (el) => lenis.scrollTo(el, { offset: HEADER_OFFSET }) }
+  // Pinned sections below the product grid must be re-measured when a filter changes its height.
+  return { scrollTo: (el) => lenis.scrollTo(el, { offset: HEADER_OFFSET }), refresh: () => ScrollTrigger.refresh() }
 }
 
 function splitHeadings() {
@@ -76,13 +79,25 @@ function parallax() {
   }
 }
 
-function factoryStrip() {
-  const strip = document.querySelector('.strip')
-  const distance = () => Math.max(0, strip.scrollWidth - window.innerWidth)
-  gsap.matchMedia().add('(min-width: 901px)', () => {
-    gsap.to(strip, {
+// Pins the rail while vertical scroll slides its track sideways by exactly the track's overflow.
+// Without JS or with reduced motion the rail stays a native swipeable row (see .is-pinned-rail in CSS).
+function horizontalScroll(railSelector, trackSelector, query) {
+  const rail = document.querySelector(railSelector)
+  const track = document.querySelector(trackSelector)
+  const distance = () => {
+    // Measured from the last visible item so product filters change the travel too.
+    const items = [...track.children].filter((el) => el.offsetWidth > 0)
+    const last = items.at(-1)
+    if (!last) return 0
+    const gutter = parseFloat(getComputedStyle(track).paddingLeft) || 0
+    return Math.max(0, last.offsetLeft + last.offsetWidth + gutter - rail.clientWidth)
+  }
+  gsap.matchMedia().add(query, () => {
+    rail.classList.add('is-pinned-rail')
+    gsap.to(track, {
       x: () => -distance(), ease: 'none',
-      scrollTrigger: { trigger: '.strip-wrap', start: 'center center', end: () => `+=${distance()}`, pin: true, scrub: 1, invalidateOnRefresh: true },
+      scrollTrigger: { trigger: rail, start: 'center center', end: () => `+=${distance()}`, pin: true, scrub: 1, invalidateOnRefresh: true },
     })
+    return () => rail.classList.remove('is-pinned-rail')
   })
 }

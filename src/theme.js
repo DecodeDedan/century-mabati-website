@@ -1,6 +1,6 @@
 // Theme choice: "system" follows the device, "light"/"dark" override it.
 // The inline script in index.html applies a saved choice before first paint;
-// this module owns the switch, persistence and telling the 3D scene.
+// this module owns the switch and persistence.
 
 export const THEME_KEY = 'cm-theme'
 export const CHOICES = ['system', 'light', 'dark']
@@ -29,11 +29,8 @@ function saveChoice(choice) {
   }
 }
 
-/**
- * @param {{onChange:(theme:'light'|'dark')=>void}} opts
- * @returns {{current:()=>'light'|'dark'}}
- */
-export function initTheme({ onChange }) {
+/** @returns {{current:()=>'light'|'dark'}} */
+export function initTheme() {
   const root = document.documentElement
   const media = window.matchMedia('(prefers-color-scheme: dark)')
   const buttons = [...document.querySelectorAll('[data-theme-choice]')]
@@ -47,7 +44,6 @@ export function initTheme({ onChange }) {
     else root.dataset.theme = choice
     for (const b of buttons) b.setAttribute('aria-pressed', String(b.dataset.themeChoice === choice))
     meta?.setAttribute('content', META_COLOR[current()])
-    onChange(current())
   }
 
   for (const b of buttons) {

@@ -4,15 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Century Mabati LTD — Roofing Sheets, Nakuru</title>
-    <meta name="description" content="Century Mabati LTD rolls tile-profile, box-profile, corrugated and stone-coated roofing sheets in Nakuru, cut to length up to 12 metres. Call 0718 035 476." />
+    <meta name="description" content="Century Mabati LTD rolls C-868, C-800, C-840 and Wavetile tiles, box profile, corrugated, aluzinc and stone-coated mabati in Nakuru, cut up to 12 metres with free delivery. Call 0718 035 476." />
     <meta name="theme-color" content="#eef1f4" />
     <!-- Apply a saved theme before first paint so the page never flashes the wrong one. -->
     <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('cm-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Century Mabati LTD — Build With The Best" />
-    <meta property="og:description" content="Roofing sheets rolled in Nakuru: C-868, C-Wave, C-800, C-840, Corrugated, Box Profile and stone-coated tiles." />
-    <meta property="og:image" content="/img/home-brown-stone.jpg" />
+    <meta property="og:description" content="Roofing sheets rolled in Nakuru: C-868, Wavetile, C-800, C-840, Stone Coated, Box Profile, Corrugated, Aluzinc, Curved and Canopy. Free delivery." />
+    <meta property="og:image" content="/img/og-factory.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
     <script type="application/ld+json">
       {
@@ -43,11 +43,11 @@
         <span class="brand-text">Century Mabati <span class="brand-ltd">LTD</span></span>
       </a>
       <nav class="nav" id="site-nav" aria-label="Main">
-        <a href="#profiles">Profiles</a>
-        <a href="#roof">Roof it</a>
+        <a href="#products">Products</a>
+        <a href="#plan">Roof planner</a>
         <a href="#factory">Factory</a>
         <a href="#projects">Projects</a>
-        <a href="#accessories">Accessories</a>
+        <a href="#quote">Contact</a>
         <div class="nav-extra">
           <a class="btn btn-solid" href="#quote">Get a quote</a>
           <div class="nav-extra-row">
@@ -91,285 +91,293 @@
       </defs>
     </svg>
 
-    <canvas id="gl" aria-hidden="true"></canvas>
     <div class="progress" aria-hidden="true"><span></span></div>
 
-    <div class="hud" aria-hidden="true">
-      <span class="hud-tag">CM · LIVE</span>
-      <span class="hud-row"><span class="hud-key">Profile</span><span class="hud-val" data-hud="profile">C-Wave</span></span>
-      <span class="hud-row"><span class="hud-key">Length</span><span class="hud-val" data-hud="length">12.00 m</span></span>
-      <span class="hud-row"><span class="hud-key">Finish</span><span class="hud-chip" data-hud="chip"></span><span class="hud-val" data-hud="color">#6b1e26</span></span>
-    </div>
-
     <main id="main">
-      <!-- 01 HERO -->
-      <section id="hero" class="hero" data-scene="hero">
-        <div class="hero-copy">
-          <p class="eyebrow" data-hero>Nakuru · Roofing sheet manufacturer</p>
-          <h1>Build with<br />the best.</h1>
+      <!-- HERO: the factory itself is the proof -->
+      <section id="hero" class="hero" aria-labelledby="hero-title">
+        <img class="hero-bg" src="/img/factory-front.webp" width="1600" height="1032" fetchpriority="high" alt="The Century Mabati factory at Barnabas, Nakuru, with the team loading a delivery truck" />
+        <div class="hero-inner">
+          <p class="eyebrow eyebrow-on-dark" data-hero>Manufacturer · Nakuru–Nairobi Highway</p>
+          <h1 id="hero-title">Build with the best.</h1>
           <p class="lede" data-hero>
-            Century Mabati rolls tile profiles, box profile, corrugated and stone-coated roofing on its own machines in Nakuru —
-            cut to the exact length your roof needs, up to 12 metres in one sheet.
+            Roofing sheets and tiles rolled on our own machines in Nakuru, cut to the exact length of your roof
+            and delivered free to your site.
           </p>
           <div class="hero-actions" data-hero>
-            <a class="btn btn-solid btn-lg" href="#quote">Request a quote</a>
-            <a class="btn btn-ghost btn-lg" href="#profiles">Explore profiles</a>
+            <a class="btn btn-accent btn-lg" href="tel:+254718035476">Call 0718 035 476</a>
+            <a class="btn btn-outline-light btn-lg" href="#plan">Plan your roof</a>
           </div>
         </div>
-        <img class="hero-fallback" src="/img/home-brown-stone.jpg" width="1280" height="721" alt="A finished home roofed in brown stone-coated Century Mabati tiles" />
-        <p class="scroll-cue" aria-hidden="true"><span></span>Scroll to roll a sheet</p>
+        <ul class="proof" role="list" aria-label="Why Century Mabati">
+          <li><strong>Own factory</strong><span>Rolled to order at Barnabas</span></li>
+          <li><strong>Up to 12 m</strong><span>One sheet, fewer joints</span></li>
+          <li><strong>Free delivery</strong><span>From our yard to your site</span></li>
+          <li><strong>10 products</strong><span>Tiles, sheets &amp; fittings</span></li>
+        </ul>
       </section>
 
-      <!-- 02 FORGE -->
-      <section id="forge" class="forge" aria-labelledby="forge-title">
-        <div class="scene-marker" data-scene="forge-start"></div>
-        <div class="forge-sticky">
-          <div class="forge-copy">
-            <p class="eyebrow"><span class="idx">02</span> Roll-forming</p>
-            <h2 id="forge-title" data-split>From steel coil to finished sheet, in one pass.</h2>
-            <p>
-              Painted steel coil feeds the roll-former and comes out as a profiled sheet, cut at the length you order.
-              Long sheets mean fewer joints on the roof — and fewer places for water to get in.
+      <!-- 01 PRODUCTS -->
+      <section id="products" class="products" aria-labelledby="products-title">
+        <header class="section-head section-head-row">
+          <div>
+            <p class="eyebrow"><span class="idx">01</span> Products</p>
+            <h2 id="products-title" data-split>Mabati and tiles for every roof.</h2>
+          </div>
+          <div class="filters" role="group" aria-label="Filter products" hidden>
+            <button type="button" class="chip-btn" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" class="chip-btn" data-filter="tile" aria-pressed="false">Tile profiles</button>
+            <button type="button" class="chip-btn" data-filter="stone" aria-pressed="false">Stone coated</button>
+            <button type="button" class="chip-btn" data-filter="sheet" aria-pressed="false">Sheets</button>
+            <button type="button" class="chip-btn" data-filter="special" aria-pressed="false">Curved &amp; canopy</button>
+          </div>
+        </header>
+        <div class="product-rail">
+        <ul class="product-grid" role="list">
+          <li class="product" data-cat="tile">
+            <img src="/img/p-c868.webp" width="562" height="1000" loading="lazy" alt="Red C-868 tile sheet coming off the roll-former" />
+            <div class="product-body">
+              <p class="tag">Tile profile</p>
+              <h3>C-868 Tile</h3>
+              <p>Deep Roman barrels with the look of classic clay tiles.</p>
+              <button class="btn btn-ghost btn-sm" type="button" data-quote-product="C-868 Tile">Get a quote</button>
+            </div>
+          </li>
+          <li class="product" data-cat="tile">
+            <img src="/img/p-wavetile.webp" width="750" height="1000" loading="lazy" alt="Red Wavetile sheet on the factory table" />
+            <div class="product-body">
+              <p class="tag">Tile profile</p>
+              <h3>Wavetile</h3>
+              <p>A soft S-shaped wave with stepped courses.</p>
+              <button class="btn btn-ghost btn-sm" type="button" data-quote-product="Wavetile">Get a quote</button>
+            </div>
+          </li>
+          <li class="product" data-cat="tile">
+            <img src="/img/p-c800.webp" width="846" height="1000" loading="lazy" alt="Charcoal C-800 tile sheet at the roll-former" />
+            <div class="product-body">
+              <p class="tag">Tile profile</p>
+              <h3>C-800 Tile</h3>
+              <p>Roman barrels at a tighter pitch for a finer tiled look.</p>
+              <button class="btn btn-ghost btn-sm" type="button" data-quote-product="C-800 Tile">Get a quote</button>
+            </div>
+          </li>
+          <li class="product" data-cat="tile">
+            <img src="/img/p-c840.webp" width="720" height="962" loading="lazy" alt="Green C-840 tile sheet leaving the roll-former" />
+            <div class="product-body">
+              <p class="tag">Tile profile</p>
+              <h3>C-840 Tile</h3>
+              <p>Crisp ribs and pronounced steps, modern and architectural.</p>
+              <button class="btn btn-ghost btn-sm" type="button" data-quote-product="C-840 Tile">Get a quote</button>
+            </div>
+          </li>
+          <li class="product" data-cat="stone">
+            <img src="/img/p-stone-coated.webp" width="1000" height="645" loading="lazy" alt="Pallets of stone-coated tiles in green, charcoal, red and brown in the showroom" />
+            <div class="product-body">
+              <p class="tag">Stone coated</p>
+              <h3>Stone Coated Mabati</h3>
+              <p>Steel tiles with a stone-chip finish: matte, textured and quiet in rain.</p>
+              <button class="btn btn-ghost btn-sm" type="button" data-quote-product="Stone Coated Mabati">Get a quote</button>
+            </div>
+          </li>
+          <li class="product" data-cat="sheet">
+            <img src="/img/p-box.webp" width="1000" height="718" loading="lazy" alt="Charcoal box profile sheets stacked at the roll-former" />
+            <div class="product-body">
+              <p class="tag">Sheet</p>
+              <h3>Box Profile</h3>
+              <p>Deep trapezoidal ribs (IT-5) for strength over wide spans.</p>
+              <button class="btn btn-ghost btn-sm" type="button" data-quote-product="Box Profile">Get a quote</button>
+            </div>
+          </li>
+          <li class="product" data-cat="sheet">
+            <img src="/img/p-corrugated.webp" width="752" height="1000" loading="lazy" alt="Red corrugated sheets on the production table" />
+            <div class="product-body">
+              <p class="tag">Sheet</p>
+              <h3>Corrugated</h3>
+              <p>The even wave profile: proven and cost-effective.</p>
+              <button class="btn btn-ghost btn-sm" type="button" data-quote-product="Corrugated">Get a quote</button>
+            </div>
+          </li>
+          <li class="product" data-cat="sheet">
+            <img src="/img/p-aluzinc.webp" width="847" height="1000" loading="lazy" alt="Silver aluzinc sheet on the production line" />
+            <div class="product-body">
+              <p class="tag">Sheet</p>
+              <h3>Aluzinc</h3>
+              <p>Unpainted aluminium-zinc coated steel that resists rust.</p>
+              <button class="btn btn-ghost btn-sm" type="button" data-quote-product="Aluzinc">Get a quote</button>
+            </div>
+          </li>
+          <li class="product" data-cat="special">
+            <img src="/img/p-curved.webp" width="450" height="1000" loading="lazy" alt="Green curved box profile sheets in the factory" />
+            <div class="product-body">
+              <p class="tag">Special</p>
+              <h3>Curved Mabati</h3>
+              <p>Sheets pre-curved for arched roofs, canopies and verandas.</p>
+              <button class="btn btn-ghost btn-sm" type="button" data-quote-product="Curved Mabati">Get a quote</button>
+            </div>
+          </li>
+          <li class="product" data-cat="special">
+            <img src="/img/p-canopy.webp" width="1000" height="750" loading="lazy" alt="Charcoal canopy sheets laid out on the factory floor" />
+            <div class="product-body">
+              <p class="tag">Special</p>
+              <h3>Canopy</h3>
+              <p>For car ports, verandas, walkways and shop fronts.</p>
+              <button class="btn btn-ghost btn-sm" type="button" data-quote-product="Canopy">Get a quote</button>
+            </div>
+          </li>
+        </ul>
+        </div>
+
+        <div class="colours">
+          <figure class="colours-photo">
+            <img src="/img/showroom-board.webp" width="1280" height="858" loading="lazy" alt="Showroom display board of every profile in every colour under the Century Mabati sign" />
+          </figure>
+          <div class="colours-body">
+            <h3>Colours we roll</h3>
+            <p class="muted">Every profile comes in the full range. Screens vary, so see the real finish on our showroom board.</p>
+            <ul class="swatches" role="list">
+              <li><span class="sw" style="--c:#6b1e26"></span>Maroon</li>
+              <li><span class="sw" style="--c:#b3262b"></span>Tile red</li>
+              <li><span class="sw" style="--c:#c2512e"></span>Terracotta</li>
+              <li><span class="sw" style="--c:#1f4d35"></span>Forest green</li>
+              <li><span class="sw" style="--c:#1f5fa8"></span>Royal blue</li>
+              <li><span class="sw" style="--c:#2b2f36"></span>Charcoal</li>
+              <li><span class="sw" style="--c:#4a3428"></span>Coffee brown</li>
+              <li><span class="sw sw-zinc"></span>Aluzinc</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 ESTIMATOR -->
+      <section id="plan" class="plan" aria-labelledby="plan-title">
+        <div class="plan-grid">
+          <div class="plan-intro">
+            <p class="eyebrow"><span class="idx">02</span> Plan your roof</p>
+            <h2 id="plan-title" data-split>Know your sheet length before you call.</h2>
+            <p class="muted">
+              Enter the size of the building. We work out how long each sheet must be cut, the roof area and the ridge
+              length, then send it to our sales team for an exact sheet count and price.
             </p>
           </div>
-          <div class="forge-readout">
-            <span class="forge-label">Sheet length</span>
-            <span class="forge-num"><span class="forge-count" data-forge-count>12.00</span><span class="forge-unit">m</span></span>
-            <span class="forge-max">Long mabati up to 12 metres</span>
-          </div>
-        </div>
-        <div class="scene-marker scene-marker-end" data-scene="forge-end"></div>
-      </section>
-
-      <!-- 03 PROFILES -->
-      <section id="profiles" class="profiles" aria-labelledby="profiles-title">
-        <header class="section-head">
-          <p class="eyebrow"><span class="idx">03</span> The range</p>
-          <h2 id="profiles-title" data-split>Eight profiles. One factory.</h2>
-          <p class="section-lede">Scroll through the range — the sheet on screen reshapes itself into each profile we roll.</p>
-        </header>
-
-        <article class="profile-step" data-scene="p5" aria-labelledby="pr-c868">
-          <div class="profile-card" data-reveal>
-            <img src="/img/p-c868.jpg" width="672" height="900" loading="lazy" alt="Green C-868 tile-profile sheet in the Century Mabati factory" />
-            <div class="profile-body">
-              <p class="code">C-868</p>
-              <h3 id="pr-c868">Deep Roman tile</h3>
-              <p>Our boldest tile profile: tall, rounded barrels that give a roof the look of classic clay tiles, pressed into one steel sheet.</p>
-              <button class="btn btn-ghost" type="button" data-quote-product="C-868">Quote C-868</button>
+          <form class="estimator" id="estimate-form" novalidate>
+            <fieldset class="seg">
+              <legend>Roof type</legend>
+              <label><input type="radio" name="type" value="gable" checked /><span>Gable · two slopes</span></label>
+              <label><input type="radio" name="type" value="hip" /><span>Hip · four slopes</span></label>
+            </fieldset>
+            <div class="est-fields">
+              <div class="field">
+                <label for="e-length">Building length (m)</label>
+                <input id="e-length" name="length" type="number" inputmode="decimal" min="2" max="100" step="0.1" value="12" required aria-describedby="x-length" />
+                <p class="err" id="x-length"></p>
+              </div>
+              <div class="field">
+                <label for="e-width">Building width (m)</label>
+                <input id="e-width" name="width" type="number" inputmode="decimal" min="2" max="40" step="0.1" value="9" required aria-describedby="x-width" />
+                <p class="err" id="x-width"></p>
+              </div>
+              <div class="field">
+                <label for="e-pitch">Roof pitch (°)</label>
+                <input id="e-pitch" name="pitch" type="number" inputmode="decimal" min="5" max="60" step="1" value="25" required aria-describedby="e-pitch-hint x-pitch" />
+                <p class="hint" id="e-pitch-hint">Most homes: 20–30°</p>
+                <p class="err" id="x-pitch"></p>
+              </div>
+              <div class="field">
+                <label for="e-overhang">Overhang (m)</label>
+                <input id="e-overhang" name="overhang" type="number" inputmode="decimal" min="0" max="1.5" step="0.1" value="0.6" required aria-describedby="x-overhang" />
+                <p class="err" id="x-overhang"></p>
+              </div>
             </div>
-          </div>
-        </article>
-
-        <article class="profile-step" data-scene="p2" aria-labelledby="pr-cwave">
-          <div class="profile-card" data-reveal>
-            <img src="/img/p-cwave.jpg" width="722" height="900" loading="lazy" alt="Maroon C-Wave tile-profile sheet coming off the roll-former" />
-            <div class="profile-body">
-              <p class="code">C-Wave</p>
-              <h3 id="pr-cwave">Flowing wave tile</h3>
-              <p>A softer S-shaped wave with stepped courses — the profile on many of the maroon and red roofs we have supplied.</p>
-              <button class="btn btn-ghost" type="button" data-quote-product="C-Wave">Quote C-Wave</button>
+            <output class="results" for="e-length e-width e-pitch e-overhang" aria-live="polite">
+              <span class="res res-main"><span class="res-k">Cut each sheet to</span><span class="res-v" data-out="sheet">—</span></span>
+              <span class="res"><span class="res-k">Roof area</span><span class="res-v" data-out="area">—</span></span>
+              <span class="res"><span class="res-k">Ridge</span><span class="res-v" data-out="ridge">—</span></span>
+              <span class="res" data-hips hidden><span class="res-k">Hips</span><span class="res-v" data-out="hips">—</span></span>
+            </output>
+            <p class="est-note" data-out="note">Sheets up to 12 m come in one piece.</p>
+            <div class="est-actions">
+              <a class="btn btn-solid btn-lg" data-out="whatsapp" href="https://wa.me/254718035476" target="_blank" rel="noopener">Send to WhatsApp for a price</a>
+              <a class="btn btn-ghost btn-lg" href="tel:+254718035476">Call 0718 035 476</a>
             </div>
-          </div>
-        </article>
-
-        <article class="profile-step" data-scene="p3" aria-labelledby="pr-c800">
-          <div class="profile-card" data-reveal>
-            <img src="/img/p-c800.jpg" width="506" height="900" loading="lazy" alt="Red C-800 Roman-style tile sheet on the production line" />
-            <div class="profile-body">
-              <p class="code">C-800</p>
-              <h3 id="pr-c800">Classic Roman tile</h3>
-              <p>Rounded barrels at a tighter pitch than C-868 for a finer, more even tiled look across the whole roof.</p>
-              <button class="btn btn-ghost" type="button" data-quote-product="C-800">Quote C-800</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="profile-step" data-scene="p4" aria-labelledby="pr-c840">
-          <div class="profile-card" data-reveal>
-            <img src="/img/p-c840.jpg" width="760" height="865" loading="lazy" alt="Charcoal C-840 tile-profile sheet with the Century Mabati logo" />
-            <div class="profile-body">
-              <p class="code">C-840</p>
-              <h3 id="pr-c840">Flat-step tile</h3>
-              <p>Crisp, low ribs and pronounced steps. It reads modern and architectural, especially in charcoal.</p>
-              <button class="btn btn-ghost" type="button" data-quote-product="C-840">Quote C-840</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="profile-step" data-scene="p0" aria-labelledby="pr-corr">
-          <div class="profile-card" data-reveal>
-            <img src="/img/p-corrugated.jpg" width="900" height="856" loading="lazy" alt="Red corrugated roofing sheets stacked at the roll-former" />
-            <div class="profile-body">
-              <p class="code">Corrugated</p>
-              <h3 id="pr-corr">The everyday workhorse</h3>
-              <p>Even sine-wave corrugations. A cost-effective, proven choice for homes, stores, farm structures and extensions.</p>
-              <button class="btn btn-ghost" type="button" data-quote-product="Corrugated">Quote Corrugated</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="profile-step" data-scene="p1" aria-labelledby="pr-box">
-          <div class="profile-card" data-reveal>
-            <img src="/img/p-box.jpg" width="900" height="751" loading="lazy" alt="Green box-profile IT-5 sheets on the factory floor" />
-            <div class="profile-body">
-              <p class="code">Box Profile · IT-5</p>
-              <h3 id="pr-box">Strong trapezoidal ribs</h3>
-              <p>Five deep, square ribs per sheet for stiffness over wider spans — the go-to for commercial, industrial and modern residential roofs.</p>
-              <button class="btn btn-ghost" type="button" data-quote-product="Box Profile (IT-5)">Quote Box Profile</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="profile-step" data-scene="p7" aria-labelledby="pr-stone-roman">
-          <div class="profile-card" data-reveal>
-            <img src="/img/p-stone-roman.jpg" width="484" height="702" loading="lazy" alt="Stone-coated tiles in Roman, shake and shingle styles in charcoal, red, brown, blue and green" />
-            <div class="profile-body">
-              <p class="code">Stone-coated · Roman</p>
-              <h3 id="pr-stone-roman">Granule-coated Roman tile</h3>
-              <p>Steel tile panels with narrow Roman barrels and a stone-chip finish: the matte, textured look on many of the homes we have roofed.</p>
-              <button class="btn btn-ghost" type="button" data-quote-product="Stone-coated Roman">Quote Stone Roman</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="profile-step" data-scene="p6" aria-labelledby="pr-stone">
-          <div class="profile-card" data-reveal>
-            <img src="/img/p-stone.jpg" width="900" height="900" loading="lazy" alt="Pallets of charcoal stone-coated shake tiles" />
-            <div class="profile-body">
-              <p class="code">Stone-coated · Shake</p>
-              <h3 id="pr-stone">Textured shake tile</h3>
-              <p>Offset shake blocks under a stone-granule coating. Matte and deeply textured, it hides fixings and softens rain noise.</p>
-              <button class="btn btn-ghost" type="button" data-quote-product="Stone-coated Shake">Quote Stone Shake</button>
-            </div>
-          </div>
-        </article>
-
-        <div class="swatch-dock" role="group" aria-labelledby="swatch-label">
-          <span id="swatch-label" class="swatch-label">Try a colour</span>
-          <button type="button" class="swatch is-active" data-swatch="" aria-pressed="true"><span class="swatch-auto">Auto</span></button>
-          <button type="button" class="swatch" data-swatch="#6b1e26" aria-pressed="false" style="--c:#6b1e26"><span class="sr">Maroon</span></button>
-          <button type="button" class="swatch" data-swatch="#b3262b" aria-pressed="false" style="--c:#b3262b"><span class="sr">Tile red</span></button>
-          <button type="button" class="swatch" data-swatch="#c2512e" aria-pressed="false" style="--c:#c2512e"><span class="sr">Terracotta</span></button>
-          <button type="button" class="swatch" data-swatch="#1f4d35" aria-pressed="false" style="--c:#1f4d35"><span class="sr">Forest green</span></button>
-          <button type="button" class="swatch" data-swatch="#1f5fa8" aria-pressed="false" style="--c:#1f5fa8"><span class="sr">Royal blue</span></button>
-          <button type="button" class="swatch" data-swatch="#2b2f36" aria-pressed="false" style="--c:#2b2f36"><span class="sr">Charcoal</span></button>
-          <button type="button" class="swatch" data-swatch="#4a3428" aria-pressed="false" style="--c:#4a3428"><span class="sr">Coffee brown</span></button>
+          </form>
         </div>
       </section>
 
-      <!-- 04 ROOF SHOW -->
-      <section id="roof" class="roof-show" aria-labelledby="roof-title">
-        <div class="scene-marker" data-scene="roof"></div>
-        <div class="roof-sticky">
-          <div class="roof-copy">
-            <p class="eyebrow"><span class="idx">04</span> On your roof</p>
-            <h2 id="roof-title" data-split>Watch a roof come together.</h2>
-            <p class="roof-lede">Keep scrolling: the same house is re-roofed in every Century profile, each laid a different way.</p>
-            <ol class="roof-steps" role="list">
-              <li><span class="rs-name">C-868</span><span class="rs-move">Rolls down from the ridge</span></li>
-              <li><span class="rs-name">C-Wave</span><span class="rs-move">Laser-cut sweep, left to right</span></li>
-              <li><span class="rs-name">C-800</span><span class="rs-move">Courses flip up from the eaves</span></li>
-              <li><span class="rs-name">C-840</span><span class="rs-move">Re-pressed in place</span></li>
-              <li><span class="rs-name">Corrugated</span><span class="rs-move">Rolls down from the ridge</span></li>
-              <li><span class="rs-name">Box Profile IT-5</span><span class="rs-move">Laser-cut sweep, left to right</span></li>
-              <li><span class="rs-name">Stone-coated Roman</span><span class="rs-move">Granules settle panel by panel</span></li>
-              <li><span class="rs-name">Stone-coated Shake</span><span class="rs-move">Courses flip up from the eaves</span></li>
-            </ol>
-          </div>
-          <img class="roof-fallback" src="/img/home-red.jpg" width="1080" height="785" loading="lazy" alt="A finished home with a red Century Mabati tile roof" />
-        </div>
-        <div class="scene-marker scene-marker-end" data-scene="roof"></div>
-      </section>
-
-      <!-- 05 FACTORY -->
-      <section id="factory" class="factory" data-scene="factory" aria-labelledby="factory-title">
+      <!-- 03 FACTORY + COMPLETE THE ROOF + DELIVERY -->
+      <section id="factory" class="factory" aria-labelledby="factory-title">
         <div class="factory-intro">
-          <p class="eyebrow"><span class="idx">05</span> The factory</p>
+          <p class="eyebrow"><span class="idx">03</span> The factory</p>
           <h2 id="factory-title" data-split>Advanced machines, on the Nakuru–Nairobi Highway.</h2>
           <p>
-            We run our own roll-forming lines at Barnabas, so profiles are made to order — accurate, consistent and ready for
-            collection or delivery straight from the yard.
+            Steel coil comes in, profiled sheets go out. Because we roll everything ourselves at Barnabas, every order is
+            made to your lengths, checked in our yard and loaded straight onto our trucks.
           </p>
         </div>
         <div class="strip-wrap">
           <ul class="strip" role="list">
-            <li class="strip-item strip-wide"><img src="/img/factory-trucks.jpg" width="1600" height="900" loading="lazy" alt="Century Mabati factory with a truck carrying steel coils" /><span>Steel coil arriving at the yard</span></li>
-            <li class="strip-item"><img src="/img/machine-blue.jpg" width="825" height="1100" loading="lazy" alt="Blue box-profile sheet leaving the roll-forming machine" /><span>Box profile on the line</span></li>
-            <li class="strip-item strip-wide"><img src="/img/machine-box.jpg" width="1100" height="790" loading="lazy" alt="Charcoal box-profile sheets being rolled" /><span>Charcoal box profile</span></li>
-            <li class="strip-item"><img src="/img/machine-red.jpg" width="928" height="1200" loading="lazy" alt="Red corrugated sheet on the production table" /><span>Corrugated, cut to length</span></li>
-            <li class="strip-item strip-wide"><img src="/img/long-12m.jpg" width="1200" height="900" loading="lazy" alt="Workers loading a 12-metre roofing sheet onto a truck" /><span>12 m sheets heading out</span></li>
-            <li class="strip-item strip-wide"><img src="/img/factory-yard.jpg" width="1600" height="768" loading="lazy" alt="Century Mabati showroom and yard at Barnabas" /><span>Our yard at Barnabas</span></li>
+            <li class="strip-item"><img src="/img/factory-sign.webp" width="1600" height="720" loading="lazy" alt="The Century Mabati factory and signboard at Barnabas" /><span>Our factory at Barnabas</span></li>
+            <li class="strip-item"><img src="/img/coils-colour.webp" width="1280" height="618" loading="lazy" alt="Painted steel coils in red, green, blue and charcoal" /><span>Painted coil in every colour</span></li>
+            <li class="strip-item"><img src="/img/machine-blue.jpg" width="825" height="1100" loading="lazy" alt="Blue box profile sheet leaving the roll-forming machine" /><span>Rolled on our own lines</span></li>
+            <li class="strip-item"><img src="/img/coils-aluzinc.webp" width="1400" height="877" loading="lazy" alt="Stacked aluzinc coils in the warehouse" /><span>Aluzinc coil in stock</span></li>
+            <li class="strip-item"><img src="/img/corrugated-red.webp" width="1186" height="1400" loading="lazy" alt="Red corrugated sheet laid over blue box profile sheets" /><span>Cut to your length</span></li>
+            <li class="strip-item"><img src="/img/stone-pallets.webp" width="1280" height="1280" loading="lazy" alt="Stacked pallets of charcoal stone-coated tiles" /><span>Stone coated, ready to load</span></li>
+            <li class="strip-item"><img src="/img/delivery-loading.webp" width="1356" height="1053" loading="lazy" alt="Team loading charcoal sheets onto a pickup for delivery" /><span>Loaded for your site</span></li>
           </ul>
+        </div>
+
+        <div class="factory-extras">
+          <div class="complete" aria-labelledby="acc-title">
+            <p class="eyebrow">Complete the roof</p>
+            <h3 id="acc-title">Everything from ridge to nail.</h3>
+            <p class="muted">Order fittings with your sheets: colour-matched and delivered together.</p>
+            <ul class="acc-list" role="list">
+              <li class="acc">
+                <img src="/img/acc-ridges.jpg" width="720" height="620" loading="lazy" alt="Red and blue ridge caps stacked beside finished sheets" />
+                <div><h4>Ridges &amp; valleys</h4><p>Watertight lines along every ridge, hip and valley.</p></div>
+              </li>
+              <li class="acc">
+                <img class="acc-badge" src="/img/acc-washers.png" width="320" height="320" loading="lazy" alt="Green roofing washers" />
+                <div><h4>Roofing washers</h4><p>Seal each fixing point against leaks.</p></div>
+              </li>
+              <li class="acc">
+                <img class="acc-badge" src="/img/acc-nails.png" width="320" height="320" loading="lazy" alt="Umbrella-head roofing nails with coloured caps" />
+                <div><h4>Roofing nails</h4><p>Umbrella-head nails with colour-matched caps.</p></div>
+              </li>
+            </ul>
+          </div>
+          <figure class="delivery">
+            <img src="/img/delivery-pickup.webp" width="1400" height="903" loading="lazy" alt="Pickup truck loaded with roofing sheets on its way to a client" />
+            <figcaption>
+              <strong>Free delivery</strong>
+              <span>We bring your order from the yard to your site: sheets, tiles and fittings together.</span>
+            </figcaption>
+          </figure>
         </div>
       </section>
 
-      <!-- 05 PROJECTS -->
-      <section id="projects" class="projects" data-scene="projects" aria-labelledby="projects-title">
+      <!-- 04 PROJECTS -->
+      <section id="projects" class="projects" aria-labelledby="projects-title">
         <header class="section-head">
-          <p class="eyebrow"><span class="idx">06</span> On real roofs</p>
+          <p class="eyebrow"><span class="idx">04</span> On real roofs</p>
           <h2 id="projects-title" data-split>Homes roofed with Century Mabati.</h2>
         </header>
         <ul class="gallery" role="list">
-          <li class="g g-a" data-reveal><figure data-parallax><img src="/img/home-brown-stone.jpg" width="1280" height="721" loading="lazy" alt="Bungalow with a brown stone-coated roof" /><figcaption>Stone-coated · brown</figcaption></figure></li>
-          <li class="g g-b" data-reveal><figure data-parallax><img src="/img/home-villa.jpg" width="1080" height="1064" loading="lazy" alt="Two-storey villa with a brown tiled roof and dormer windows" /><figcaption>Tile profile · brown</figcaption></figure></li>
-          <li class="g" data-reveal><figure data-parallax><img src="/img/home-red.jpg" width="1080" height="785" loading="lazy" alt="Stone house with a bright red tile roof" /><figcaption>Tile profile · red</figcaption></figure></li>
-          <li class="g" data-reveal><figure data-parallax><img src="/img/home-charcoal.jpg" width="740" height="432" loading="lazy" alt="Large house with a charcoal stone-coated roof" /><figcaption>Stone-coated · charcoal</figcaption></figure></li>
-          <li class="g g-b" data-reveal><figure data-parallax><img src="/img/home-modern.jpg" width="720" height="943" loading="lazy" alt="Modern house with a steep grey stone-coated roof" /><figcaption>Stone-coated · grey</figcaption></figure></li>
-          <li class="g" data-reveal><figure data-parallax><img src="/img/home-green.jpg" width="1040" height="660" loading="lazy" alt="Bungalow with a green tile-profile roof" /><figcaption>Tile profile · green</figcaption></figure></li>
-          <li class="g g-a" data-reveal><figure data-parallax><img src="/img/home-handover.jpg" width="1200" height="799" loading="lazy" alt="Client and Century Mabati representative outside a newly roofed stone house" /><figcaption>Handover day</figcaption></figure></li>
-          <li class="g" data-reveal><figure data-parallax><img src="/img/home-grey-tile.jpg" width="1081" height="720" loading="lazy" alt="Close view of a charcoal tile roof with a dormer" /><figcaption>Tile profile · charcoal</figcaption></figure></li>
-          <li class="g" data-reveal><figure data-parallax><img src="/img/home-install.jpg" width="1032" height="581" loading="lazy" alt="Roofers installing red tile sheets on a house under construction" /><figcaption>Installation in progress</figcaption></figure></li>
+          <li class="g g-a" data-reveal><figure data-parallax><img src="/img/home-brown-stone.webp" width="1280" height="721" loading="lazy" alt="Bungalow with a brown stone-coated roof" /><figcaption>Stone Coated Mabati · brown</figcaption></figure></li>
+          <li class="g g-b" data-reveal><figure data-parallax><img src="/img/home-aframe.webp" width="1173" height="1400" loading="lazy" alt="A-frame house with a steep charcoal roof" /><figcaption>A-frame · charcoal</figcaption></figure></li>
+          <li class="g" data-reveal><figure data-parallax><img src="/img/home-red-hip.webp" width="1400" height="855" loading="lazy" alt="Hillside home with a red tile hip roof" /><figcaption>Tile roof · red</figcaption></figure></li>
+          <li class="g g-a" data-reveal><figure data-parallax><img src="/img/home-c840.webp" width="1000" height="486" loading="lazy" alt="Bungalow with a charcoal C-840 tile roof" /><figcaption>C-840 Tile · charcoal</figcaption></figure></li>
+          <li class="g g-b" data-reveal><figure data-parallax><img src="/img/home-villa.webp" width="1080" height="1064" loading="lazy" alt="Two-storey villa with a brown stone-coated roof and dormer windows" /><figcaption>Stone Coated Mabati · brown</figcaption></figure></li>
+          <li class="g g-a" data-reveal><figure data-parallax><img src="/img/home-box.webp" width="1400" height="630" loading="lazy" alt="Long school block with a red box profile roof" /><figcaption>Box Profile · red</figcaption></figure></li>
+          <li class="g" data-reveal><figure data-parallax><img src="/img/home-wavetile.webp" width="1081" height="720" loading="lazy" alt="Close view of a charcoal Wavetile roof" /><figcaption>Wavetile · charcoal</figcaption></figure></li>
+          <li class="g" data-reveal><figure data-parallax><img src="/img/home-red-storey.webp" width="1400" height="986" loading="lazy" alt="Two-storey house with a red tile roof" /><figcaption>Tile roof · red</figcaption></figure></li>
+          <li class="g g-a" data-reveal><figure data-parallax><img src="/img/home-c800.webp" width="1400" height="630" loading="lazy" alt="House under construction with a charcoal C-800 tile roof" /><figcaption>C-800 Tile · charcoal</figcaption></figure></li>
         </ul>
       </section>
 
-      <!-- 06 WHY -->
-      <section id="why" class="why" data-scene="why" aria-labelledby="why-title">
-        <div class="why-inner">
-          <header class="section-head">
-            <p class="eyebrow"><span class="idx">07</span> Why Century</p>
-            <h2 id="why-title" data-split>Distinctive quality for all weather conditions.</h2>
-          </header>
-          <ol class="why-list" role="list">
-            <li data-reveal><span class="why-n">01</span><h3>The most advanced machines</h3><p>Our lines roll efficient, accurate profiles — every sheet matches the next.</p></li>
-            <li data-reveal><span class="why-n">02</span><h3>Known for durability</h3><p>Built for sun, heavy rain and the highland cold, season after season.</p></li>
-            <li data-reveal><span class="why-n">03</span><h3>A variety of designs</h3><p>Eight profiles, a full palette of colours, plus the fittings to finish the job.</p></li>
-            <li data-reveal><span class="why-n">04</span><h3>Service until you are satisfied</h3><p>Every customer is our target until the roof is done and they are happy with it.</p></li>
-          </ol>
-        </div>
-      </section>
-
-      <!-- 07 ACCESSORIES -->
-      <section id="accessories" class="accessories" data-scene="accessories" aria-labelledby="acc-title">
-        <header class="section-head">
-          <p class="eyebrow"><span class="idx">08</span> Complete the roof</p>
-          <h2 id="acc-title" data-split>Everything from ridge to nail.</h2>
-        </header>
-        <ul class="acc-grid" role="list">
-          <li class="acc" data-reveal>
-            <div class="acc-media"><img src="/img/p-translucent.jpg" width="750" height="900" loading="lazy" alt="Translucent corrugated roofing sheet on the factory table" /></div>
-            <div class="acc-body"><h3>Translucent sheets</h3><p>Let daylight into stores, verandas and workshops.</p></div>
-          </li>
-          <li class="acc" data-reveal>
-            <div class="acc-media"><img src="/img/acc-ridges.jpg" width="720" height="620" loading="lazy" alt="Red and blue ridge caps and curved ridges stacked beside finished sheets" /></div>
-            <div class="acc-body"><h3>Ridges &amp; valleys</h3><p>Colour-matched to your sheets for clean, watertight lines along every ridge and valley.</p></div>
-          </li>
-          <li class="acc" data-reveal>
-            <div class="acc-media acc-badge"><img src="/img/acc-washers.png" width="320" height="320" loading="lazy" alt="Green roofing washers" /></div>
-            <div class="acc-body"><h3>Roofing washers</h3><p>Seal each fixing point against leaks.</p></div>
-          </li>
-          <li class="acc" data-reveal>
-            <div class="acc-media acc-badge"><img src="/img/acc-nails.png" width="320" height="320" loading="lazy" alt="Umbrella-head roofing nails with coloured caps" /></div>
-            <div class="acc-body"><h3>Roofing nails</h3><p>Umbrella-head nails with colour-matched caps.</p></div>
-          </li>
-        </ul>
-      </section>
-
-      <!-- 08 QUOTE + CONTACT -->
-      <section id="quote" class="quote" data-scene="contact" aria-labelledby="quote-title">
+      <section id="quote" class="quote" aria-labelledby="quote-title">
         <div class="quote-grid">
           <div class="quote-card">
-            <p class="eyebrow"><span class="idx">09</span> Get a quote</p>
+            <p class="eyebrow"><span class="idx">05</span> Get a quote</p>
             <h2 id="quote-title">Tell us about your roof.</h2>
             <p class="muted">Your request opens in WhatsApp and goes straight to our sales team.</p>
             <noscript><p class="notice">Call or WhatsApp <a href="tel:+254718035476">0718 035 476</a> for a quote.</p></noscript>
@@ -436,6 +444,12 @@
         </div>
       </section>
     </main>
+
+    <!-- Keeps the sales line one tap away on phones, where the header has no room for the number. -->
+    <nav class="callbar" aria-label="Contact sales">
+      <a class="btn btn-solid" href="tel:+254718035476"><svg class="call-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" /></svg>0718 035 476</a>
+      <a class="btn btn-ghost" href="https://wa.me/254718035476" target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
 
     <footer class="site-footer">
       <div class="brand">

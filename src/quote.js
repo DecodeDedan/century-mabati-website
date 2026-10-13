@@ -3,7 +3,7 @@
 
 export const SALES_WHATSAPP = '254718035476'
 
-export const PRODUCTS = ['C-868', 'C-Wave', 'C-800', 'C-840', 'Corrugated', 'Box Profile (IT-5)', 'Stone-coated Roman', 'Stone-coated Shake', 'Translucent sheets', 'Ridges & valleys', 'Not sure yet']
+export const PRODUCTS = ['C-868 Tile', 'Wavetile', 'C-800 Tile', 'C-840 Tile', 'Stone Coated Mabati', 'Box Profile', 'Corrugated', 'Aluzinc', 'Curved Mabati', 'Canopy', 'Translucent sheets', 'Ridges & valleys', 'Roofing washers & nails', 'Not sure yet']
 
 export const COLOURS = ['Maroon', 'Tile red', 'Terracotta', 'Forest green', 'Royal blue', 'Charcoal', 'Coffee brown', 'Not sure yet']
 
