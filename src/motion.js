@@ -84,6 +84,7 @@ function parallax() {
 function horizontalScroll(railSelector, trackSelector, query) {
   const rail = document.querySelector(railSelector)
   const track = document.querySelector(trackSelector)
+  if (!rail || !track) return
   const distance = () => {
     // Measured from the last visible item so product filters change the travel too.
     const items = [...track.children].filter((el) => el.offsetWidth > 0)
